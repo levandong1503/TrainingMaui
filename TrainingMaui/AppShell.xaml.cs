@@ -1,4 +1,5 @@
 ﻿using Telerik.UI.Xaml.Controls.DataVisualization.Map.BingRest;
+using TrainingMaui.Features.Music.Pages;
 
 namespace TrainingMaui
 {
@@ -8,7 +9,8 @@ namespace TrainingMaui
         {
             InitializeComponent();
 
-            Routing.RegisterRoute(nameof(Features.Music.Pages.Home), typeof(Features.Music.Pages.Home));
+            //Routing.RegisterRoute(nameof(Home), typeof(Home));
+
         }
     }
 }

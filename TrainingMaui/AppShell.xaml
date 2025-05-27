@@ -3,11 +3,11 @@
     x:Class="TrainingMaui.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TrainingMaui"
     xmlns:features="clr-namespace:TrainingMaui.Features.Music.Pages"
+    xmlns:local="clr-namespace:TrainingMaui"
+    Title="TrainingMaui"
     Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False"
-    Title="TrainingMaui">
+    Shell.NavBarIsVisible="False">
 
     <ShellContent
         Title="Home"

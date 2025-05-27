@@ -13,35 +13,19 @@ public class HomeViewModel : BaseViewModel
         {
             new NavigationItem
             {
-                Text = "Inbox",
-                Icon = "\ue8a2",
-                Tag = "5"
+                Text = "Home",
+                UrlIcon = "home.png",
+                UrlPage = "5"
             },
             new NavigationItem
             {
-                Text = "Draft",
-                Icon = "\ue870"
+                Text = "Browse",
+                UrlIcon = "search.png"
             },
              new NavigationItem
             {
-                Text = "Archive",
-                Icon = "\ue826"
-            },
-            new NavigationItem
-            {
-                Text = "Sent",
-                Icon = "\ue82d"
-            },
-            new NavigationItem
-            {
-                Text = "Spam",
-                Icon = "\ue82e",
-                Tag = "99+"
-            },
-            new NavigationItem
-            {
-                Text = "Deleted",
-                Icon = "\ue827"
+                Text = "Radio",
+                UrlIcon = "radio.png"
             },
         };
     }
