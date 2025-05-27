@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<app:BasePage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:app="clr-namespace:TrainingMaui.CoreMVVM.MVVM;assembly=TrainingMaui.CoreMVVM"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:telerikFont="clr-namespace:TrainingMaui.UI.Fonts.TelerikFont;assembly=TrainingMaui.UI"
+    x:Class="TrainingMaui.Features.Music.Pages.Home"
+    xmlns:local="clr-namespace:TrainingMaui.Features.Music.ViewModels"
+    Title="Home">
+    <app:BasePage.Resources>
+        <FontImageSource
+            x:Key="HomeIcon"
+            Glyph="&#xe85b;"
+            FontFamily="{x:Static telerikFont:TelerikFontAliases.TelerikFontExamples}"
+            Size="16" />
+
+    </app:BasePage.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="3*" />
+                <ColumnDefinition
+                    Width="3*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <telerik:RadNavigationView
+            Grid.Row="2"
+            HeaderText="Discover"
+            ItemsSource="{Binding NavigationItems}"
+            HeaderStyle="{StaticResource NavigationHeaderStyle}"
+            ImageSourcePath="Icon"
+            ImageSourceConverter="{StaticResource FontIconConverter}"
+            x:Name="navigationView">
+            
+            <!--<telerik:RadNavigationView.Items>
+                <telerik:NavigationViewItem
+                    Text="Item 1" />
+                <telerik:NavigationViewItem
+                    Text="Item 2" />
+                <telerik:NavigationViewItem
+                    Text="Item 3" />
+                <telerik:NavigationViewItem
+                    Text="Item 4" />
+                <telerik:NavigationViewItem
+                    Text="Item 5" />
+            </telerik:RadNavigationView.Items>-->
+        </telerik:RadNavigationView>
+    </Grid>
+</app:BasePage>

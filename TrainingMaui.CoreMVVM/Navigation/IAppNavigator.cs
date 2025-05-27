@@ -10,6 +10,6 @@ public interface IAppNavigator
 
     Task ShareAsync(string text, string title = default);
 
-    Task ShowSnackbarAsync(string message, Action action = null, string actionText = null);
+    //Task ShowSnackbarAsync(string message, Action action = null, string actionText = null);
 
 }

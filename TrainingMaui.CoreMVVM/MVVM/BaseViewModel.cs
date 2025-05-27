@@ -5,14 +5,31 @@ using CommunityToolkit.Mvvm.Input;
 using System.Data.Common;
 using TrainingMaui.CoreMVVM.Navigation;
 using TrainingMaui.Utils.Resources;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace TrainingMaui.CoreMVVM.MVVM;
 
-public abstract partial class BaseViewModel : ObservableRecipient
+public abstract partial class BaseViewModel : INotifyPropertyChanged
 {
-    [ObservableProperty]
+    public event PropertyChangedEventHandler? PropertyChanged;
     protected bool isBusy;
 
+    public bool IsBusy
+    {
+        get => isBusy;
+        set
+        {
+            if (isBusy != value)
+            {
+                isBusy = value;
+                NotifyPropertyChanged();
+            }
+        }
+    }
+
+    public ICommand BackCommand { get; set; }
     protected async Task ExecuteCommandAsync(string commandName, Func<Task> action)
     {
         if (IsBusy) return;
@@ -62,6 +79,7 @@ public abstract partial class BaseViewModel : ObservableRecipient
     protected BaseViewModel(IAppNavigator appNavigator)
     {
         AppNavigator = appNavigator;
+        BackCommand = new AsyncRelayCommand(BackAsync);
     }
 
     public virtual Task OnAppearingAsync()
@@ -78,6 +96,13 @@ public abstract partial class BaseViewModel : ObservableRecipient
         return Task.CompletedTask;
     }
 
-    [RelayCommand]
     protected virtual Task BackAsync() => AppNavigator.GoBackAsync(data: GetType().FullName);
+
+    private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+    {
+        if (PropertyChanged != null)
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 }

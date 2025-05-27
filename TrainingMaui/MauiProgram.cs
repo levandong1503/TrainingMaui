@@ -1,10 +1,13 @@
-﻿using CommunityToolkit.Maui;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using Telerik.Maui.Controls.Compatibility;
+using TrainingMaui.CoreMVVM.MVVM;
+using TrainingMaui.CoreMVVM.Navigation;
 using TrainingMaui.DataAccess.Models;
+using TrainingMaui.Features.Music.Pages;
+using TrainingMaui.Features.Music.ViewModels;
 using TrainingMaui.UI.Fonts.TelerikFont;
 using TrainingMaui.Utils.Encrypted;
 
@@ -23,18 +26,32 @@ namespace TrainingMaui
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddTelerikFont();
-            })
-            .UseMauiCommunityToolkit(options =>
-            {
-                options.SetShouldEnableSnackbarOnWindows(true);
             });
+            //.UseMauiCommunityToolkit(options =>
+            //{
+            //    options.SetShouldEnableSnackbarOnWindows(true);
+            //});
 
+            builder.RegisterPages();
+            builder.RegisterServices();
             builder.RegisterLog();
 
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
             return builder.Build();
+        }
+
+        private static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
+        {
+            builder.Services.AddTransient<IAppNavigator, AppNavigator>();
+            return builder;
+        }
+
+        private static MauiAppBuilder RegisterPages(this MauiAppBuilder builder)
+        {
+            builder.Services.AddPage<Home, HomeViewModel>();
+            return builder;
         }
 
         private static MauiAppBuilder RegisterLog(this MauiAppBuilder builder)
@@ -75,5 +92,12 @@ namespace TrainingMaui
             return builder;
         }
 
+        private static IServiceCollection AddPage<TPage, TViewModel>(this IServiceCollection services)
+            where TPage : BasePage where TViewModel : BaseViewModel
+        {
+            services.AddTransient<TPage>();
+            services.AddTransient<TViewModel>();
+            return services;
+        }
     }
 }

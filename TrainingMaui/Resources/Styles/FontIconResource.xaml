@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:converters="clr-namespace:TrainingMaui.UI.Converters;assembly=TrainingMaui.UI"
+                    xmlns:telerikFontAliases="clr-namespace:TrainingMaui.UI.Fonts.TelerikFont;assembly=TrainingMaui.UI"
+    x:Class="TrainingMaui.Resources.Styles.FontIconResource">
+
+    <converters:FontIconConverter
+        x:Key="FontIconConverter"
+        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}"
+        FontSize="16" />
+
+    <FontImageSource
+        x:Key="HomeIcon"
+        Glyph="&#xe85b;"
+        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}"
+        Size="16" />
+
+    <FontImageSource
+        x:Key="SettingsIcon"
+        Glyph="&#xe822;"
+        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}"
+        Size="16" />
+</ResourceDictionary>

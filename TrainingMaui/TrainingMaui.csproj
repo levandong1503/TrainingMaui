@@ -60,7 +60,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.5" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.5" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.70" />
@@ -81,15 +80,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Features\Music\Home.xaml.cs">
-	    <DependentUpon>Home.xaml</DependentUpon>
-	  </Compile>
+	  <MauiXaml Update="Features\Music\Pages\Home.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\FontIconResource.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Features\Music\Home.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	  <Folder Include="Features\Music\Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Features\Music\Pages\Home.xaml.cs">
+	    <DependentUpon>Home.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

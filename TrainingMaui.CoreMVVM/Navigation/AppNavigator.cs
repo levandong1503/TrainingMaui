@@ -1,11 +1,4 @@
-﻿
-using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
-using TrainingMaui.UI;
-using TrainingMaui.UI.Fonts;
-using Font = Microsoft.Maui.Font;
-
-namespace TrainingMaui.CoreMVVM.Navigation;
+﻿namespace TrainingMaui.CoreMVVM.Navigation;
 
 public class AppNavigator : IAppNavigator
 {
@@ -63,21 +56,21 @@ public class AppNavigator : IAppNavigator
         return Share.Default.RequestAsync(request);
     }
 
-    public Task ShowSnackbarAsync(string message, Action action = null, string actionText = null)
-    {
-        var options = new SnackbarOptions
-        {
-            BackgroundColor = AppColors.Purple,
-            TextColor = AppColors.White,
-            ActionButtonTextColor = AppColors.Pink,
-            CornerRadius = new CornerRadius(Dimens.ButtonCornerRadius),
-            Font = Font.OfSize(FontNames.ArchiaRegular, Dimens.FontSizeT6),
-            ActionButtonFont = Font.OfSize(FontNames.ArchiaSemiBold, Dimens.FontSizeT6),
-            CharacterSpacing = 0.5
-        };
-        var snackbar = Snackbar.Make(message, action, actionText ?? "OK", TimeSpan.FromSeconds(5), options);
-        return snackbar.Show();
-        throw new NotImplementedException("Snackbar not implemented");
+    //public Task ShowSnackbarAsync(string message, Action action = null, string actionText = null)
+    //{
+    //    var options = new SnackbarOptions
+    //    {
+    //        BackgroundColor = AppColors.Purple,
+    //        TextColor = AppColors.White,
+    //        ActionButtonTextColor = AppColors.Pink,
+    //        CornerRadius = new CornerRadius(Dimens.ButtonCornerRadius),
+    //        Font = Font.OfSize(FontNames.ArchiaRegular, Dimens.FontSizeT6),
+    //        ActionButtonFont = Font.OfSize(FontNames.ArchiaSemiBold, Dimens.FontSizeT6),
+    //        CharacterSpacing = 0.5
+    //    };
+    //    var snackbar = Snackbar.Make(message, action, actionText ?? "OK", TimeSpan.FromSeconds(5), options);
+    //    return snackbar.Show();
+    //    throw new NotImplementedException("Snackbar not implemented");
 
-    }
+    //}
 }
