@@ -124,6 +124,6 @@
     <value>yyyy-MM-dd HH:mm:ss.fff zzz</value>
   </data>
   <data name="ErrorMessage" xml:space="preserve">
-    <value>「健診状況モニタの初期化に失敗しました, Exception:</value>
+    <value>「Exception:</value>
   </data>
 </root>

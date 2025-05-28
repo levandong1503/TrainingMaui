@@ -79,7 +79,7 @@ namespace TrainingMaui.Utils.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 「健診状況モニタの初期化に失敗しました, Exception:.
+        ///   Looks up a localized string similar to 「Exception:.
         /// </summary>
         public static string ErrorMessage {
             get {
