@@ -26,7 +26,6 @@
 	  <Folder Include="Controls\" />
 	  <Folder Include="Fonts\TelerikFont\Resources\Fonts\" />
 	  <Folder Include="Layouts\" />
-	  <Folder Include="NewFolder\" />
 	</ItemGroup>
 
 	<ItemGroup>
