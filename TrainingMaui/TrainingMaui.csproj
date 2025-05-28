@@ -60,12 +60,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\Artists\artistimage.png" />
 	  <None Remove="Resources\Images\IconNavigation\home.png" />
 	  <None Remove="Resources\Images\IconNavigation\list.png" />
 	  <None Remove="Resources\Images\IconNavigation\music.png" />
 	  <None Remove="Resources\Images\IconNavigation\radio.png" />
 	  <None Remove="Resources\Images\IconNavigation\search.png" />
 	  <None Remove="Resources\Images\IconNavigation\smile.png" />
+	  <None Remove="Resources\Images\MusicPlayList\playlistcoverimage.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -92,28 +94,44 @@
 	  <MauiXaml Update="Features\Music\Pages\Home.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Views\ArtistView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Views\CardPlaylistView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Views\HomeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\FontIconResource.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Features\Music\Views\" />
-	</ItemGroup>
-
-	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Artists\artistimage.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\home.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\list.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\music.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\radio.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\search.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\smile.png" />
+	  <MauiImage Include="Resources\Images\MusicPlayList\playlistcoverimage.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Features\Music\Pages\Home.xaml.cs">
 	    <DependentUpon>Home.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Features\Music\Views\HomeView.xaml.cs">
+	    <DependentUpon>HomeView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Features\Music\Views\CardPlaylistView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
 	</ItemGroup>
 
 </Project>

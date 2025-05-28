@@ -9,32 +9,54 @@
     xmlns:telerikFont="clr-namespace:TrainingMaui.UI.Fonts.TelerikFont;assembly=TrainingMaui.UI"
     Title="Home">
     <app:BasePage.Resources>
-        <FontImageSource
-            x:Key="HomeIcon"
-            FontFamily="{x:Static telerikFont:TelerikFontAliases.TelerikFontExamples}"
-            Glyph="&#xe85b;"
-            Size="16" />
-
     </app:BasePage.Resources>
 
     <Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="3*" />
-            </Grid.ColumnDefinitions>
-        </Grid>
-
-        <Grid>
-            <telerik:RadNavigationView
-                x:Name="navigationView"
-                Grid.Row="2"
-                DisplayMemberPath="Text"
-                HeaderStyle="{StaticResource NavigationHeaderStyle}"
-                HeaderText="Discover"
-                ImageSourcePath="UrlIcon"
-                ItemsSource="{Binding NavigationItems}" />
-        </Grid>
-        <Image Grid.Column="1" />
+        <telerik:RadNavigationView
+            x:Name="navigationView"
+            HeaderStyle="{StaticResource NavigationHeaderStyle}"
+            HeaderText="Music app"
+            IsPaneOpen="True"
+            DisplayMode="Expanded"
+            AutoChangeDisplayMode="False"
+            SelectedItem="{Binding SelectedItem}"
+            
+            BackgroundColor="Transparent">
+            <telerik:RadNavigationView.Items>
+                <telerik:NavigationViewItem
+                    Text="Discover"
+                    IsEnabled="False"
+                    IsSelectable="False"
+                    Style="{StaticResource HeaderGroupStyle}" />
+                <telerik:NavigationViewItem
+                    Text="Home"
+                    IsSelected="True"
+                    ImageSource="home.png"/>
+                <telerik:NavigationViewItem
+                    Text="Browse"
+                    ImageSource="search.png" />
+                <telerik:NavigationViewItem
+                    Text="Radio"
+                    ImageSource="radio.png" />
+                <telerik:NavigationViewItem
+                    Text="Header"
+                    IsEnabled="False"
+                    IsSelectable="False"
+                    Style="{StaticResource HeaderGroupStyle}" />
+                <telerik:NavigationViewItem
+                    Text="Playlists"
+                    ImageSource="list.png" />
+                <telerik:NavigationViewItem
+                    Text="Song"
+                    ImageSource="music.png" />
+                <telerik:NavigationViewItem
+                    Text="Personalized picks"
+                    ImageSource="smile.png"/>
+            </telerik:RadNavigationView.Items>
+            <telerik:RadNavigationView.Content>
+                <ContentView
+                    Content="{Binding CurrentPage}" />
+            </telerik:RadNavigationView.Content>
+        </telerik:RadNavigationView>
     </Grid>
 </app:BasePage>

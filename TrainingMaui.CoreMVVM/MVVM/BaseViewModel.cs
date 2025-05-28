@@ -98,7 +98,7 @@ public abstract partial class BaseViewModel : INotifyPropertyChanged
 
     protected virtual Task BackAsync() => AppNavigator.GoBackAsync(data: GetType().FullName);
 
-    private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+    public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
     {
         if (PropertyChanged != null)
         {
