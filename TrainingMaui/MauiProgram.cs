@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
+using Syncfusion.Maui.Toolkit.Hosting;
 using Telerik.Maui.Controls.Compatibility;
 using TrainingMaui.CoreMVVM.MVVM;
 using TrainingMaui.CoreMVVM.Navigation;
@@ -21,6 +22,7 @@ namespace TrainingMaui
             builder
                 .UseTelerik()
                 .UseMauiApp<App>()
+                .ConfigureSyncfusionToolkit()
                 .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

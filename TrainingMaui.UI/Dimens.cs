@@ -14,9 +14,11 @@ public class Dimens
     public static readonly double Spacing7 = 7;
     public static readonly double SpacingXs = 6;
     public static readonly double SpacingSm = 8;
+    public static readonly double Spacing10 = 10;
 
     public static readonly double FontSize16 = 16;
     public static readonly double FontSize20 = 20;
+    public static readonly double FontSize40 = 40;
 
     public static readonly double LineHeightT1 = 48;
     public static readonly double LineHeightT2 = 32;
@@ -84,7 +86,7 @@ public class Dimens
     public static readonly double Height51 = 51;
     public static readonly double Height54 = 54;
 
-    public static readonly double Width48 = 48;
+    public static readonly double Width40 = 40;
     public static readonly double Width51 = 51;
 
     public static readonly int CornerRadius3 = 3;
@@ -94,6 +96,9 @@ public class Dimens
     public static readonly Thickness RadBorderCornerRadius2 = new(2);
     public static readonly Thickness RadBorderThickness1 = new(1);
     public static readonly Thickness RadBorderThickness0 = new(0);
+    public static readonly Thickness RadBorderBottom01 = new(0, 0, 0, 1);
+    public static readonly Thickness CornerRadius40 = new(40);
+
 
     public static readonly double RotationY0 = 0;
     public static readonly double RotationY180 = 180;

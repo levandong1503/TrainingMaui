@@ -128,17 +128,11 @@
                 </HorizontalStackLayout>
             </telerik:RadBorder>
 
-            <telerik:RadBorder
+
+            <telerik:RadButton
                 Grid.Column="2"
-                CornerRadius="9"
-                AutomationId="border"
-                BorderThickness="1">
-                <telerik:RadButton
-                    x:Name="button4"
-                    Text="Call to action"
-                    BackgroundColor="Black"
-                    TextColor="White" />
-            </telerik:RadBorder>
+                Text="Call to action"
+                Style="{StaticResource HeaderBlackButton}"/>
         </FlexLayout>
 
         <VerticalStackLayout>
@@ -151,10 +145,8 @@
                 Text="SubHeading"
                 Style="{StaticResource SubHeadingArea}" />
 
-            <HorizontalStackLayout
-                Grid.Row="2"
-                HorizontalOptions="Center"
-                Spacing="28">
+            <telerik:RadWrapLayout
+                Grid.Row="2">
                 <views:CardPlaylistView
                     Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
@@ -191,7 +183,7 @@
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
-            </HorizontalStackLayout>
+            </telerik:RadWrapLayout>
         </VerticalStackLayout>
 
 
@@ -206,10 +198,8 @@
                 Text="SubHeading"
                 Style="{StaticResource SubHeadingArea}" />
 
-            <FlexLayout
-                Grid.Row="2"
-                JustifyContent="SpaceEvenly"
-                Wrap="Wrap">
+            <telerik:RadWrapLayout
+                Grid.Row="2">
                 <views:ArtistView
                     ImageSource="artistimage.png"
                     ArtistName="Artist Name"
@@ -230,7 +220,11 @@
                     ImageSource="artistimage.png"
                     ArtistName="Artist Name"
                     Category="R&amp;B" />
-            </FlexLayout>
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+            </telerik:RadWrapLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentView>

@@ -7,7 +7,7 @@
              x:Name="this">
     <VerticalStackLayout
         Spacing="{x:Static ui:Dimens.SpacingSm}"
-        Padding="0"
+        Margin="15, 5"
         WidthRequest="144">
         <telerik:RadBorder
             CornerRadius="12">

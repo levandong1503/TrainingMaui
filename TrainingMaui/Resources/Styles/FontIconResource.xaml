@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:converters="clr-namespace:TrainingMaui.UI.Converters;assembly=TrainingMaui.UI"
                     xmlns:telerikFontAliases="clr-namespace:TrainingMaui.UI.Fonts.TelerikFont;assembly=TrainingMaui.UI"
+                    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
     x:Class="TrainingMaui.Resources.Styles.FontIconResource">
 
     <converters:FontIconConverter
@@ -21,4 +22,16 @@
         Glyph="&#xe822;"
         FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}"
         Size="16" />
+    
+    <FontImageSource
+        x:Key="AngleDown"
+        Glyph="{x:Static ui:FontTelerikIcons.AngleDown}"
+        Size="16"
+        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}" />
+    <FontImageSource
+        x:Key="Search"
+        Glyph="&#xe810;"
+        Size="16"
+        Color="Gray"
+        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}" />
 </ResourceDictionary>

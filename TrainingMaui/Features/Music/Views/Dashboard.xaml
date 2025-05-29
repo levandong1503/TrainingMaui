@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit"
+    x:Class="TrainingMaui.Features.Music.Views.Dashboard"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
+    xmlns:views="clr-namespace:TrainingMaui.Features.Music.Views"
+    xmlns:telerikFontAliases="clr-namespace:TrainingMaui.UI.Fonts.TelerikFont;assembly=TrainingMaui.UI">
+
+    <ContentView.Resources>
+        <Style
+            TargetType="telerik:TabViewContent">
+            <Setter
+                Property="IsVisible"
+                Value="Collapse" />
+        </Style>
+
+        <Style
+            TargetType="telerik:TabViewHeaderItem"
+            x:Key="TabViewCustome">
+            <Setter
+                Property="TextColor"
+                Value="#99000000" />
+            <Setter
+                Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup
+                        Name="CommonStates">
+                        <VisualState
+                            Name="Normal">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BorderThickness"
+                                    Value="0" />
+                                <Setter
+                                    Property="Margin"
+                                    Value="5,5,5,5" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="TextColor"
+                                    Value="#61000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            Name="Selected">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="White" />
+                                <Setter
+                                    Property="BorderColor"
+                                    Value="Transparent" />
+                                <Setter
+                                    Property="Margin" Value="5,5,5,5" />
+                                <Setter
+                                    Property="CornerRadius"
+                                    Value="5"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <Style
+            TargetType="telerik:TabViewHeader">
+            <Setter
+                Property="WidthRequest"
+                Value="200" />
+            <Setter
+                Property="HeightRequest"
+                Value="53" />
+            <Setter
+                Property="CornerRadius"
+                Value="70" />
+        </Style>
+
+        <Style
+            TargetType="telerik:RadTabView">
+            <Setter
+                Property="WidthRequest"
+                Value="190" />
+            <Setter
+                Property="CornerRadius"
+                Value="20" />
+        </Style>
+    </ContentView.Resources>
+    
+    <VerticalStackLayout Spacing="25">
+
+        <telerik:RadBorder
+            BorderThickness="{x:Static ui:Dimens.RadBorderBottom01}"
+            BorderBrush="#E0E0E0">
+            <FlexLayout
+                JustifyContent="SpaceBetween">
+                <Label
+                    VerticalOptions="Center"
+                    Text="Dashboard app"
+                    FontSize="{x:Static ui:Dimens.FontSize20}"
+                    FontAttributes="Bold" />
+                <HorizontalStackLayout
+                    Spacing="{x:Static ui:Dimens.Spacing10}">
+                    <telerik:RadButton
+                        HeightRequest="{x:Static ui:Dimens.Height40}"
+                        WidthRequest="56"
+                        Text="{x:Static ui:FontTelerikIcons.Dot3}"
+                        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}" />
+                    <telerik:RadButton
+                        Text="Share"
+                        HeightRequest="{x:Static ui:Dimens.Height40}"
+                        Style="{StaticResource HeaderBlackButton}" />
+
+                    <telerik:RadTemplatedButton
+                        x:Name="AccountOptionButton"
+                        Style="{StaticResource TemplateButtonTransparent}">
+                        <telerik:RadTemplatedButton.ContentTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout
+                                    VerticalOptions="End"
+                                    Spacing="{x:Static ui:Dimens.Spacing10}">
+                                    <telerik:RadBorder
+                                        CornerRadius="{x:Static ui:Dimens.CornerRadius40}">
+                                        <Image
+                                            Source="helenahills.png"
+                                            WidthRequest="{x:Static ui:Dimens.Width40}" />
+                                    </telerik:RadBorder>
+                                    <Label
+                                        VerticalOptions="Center"
+                                        Text="{x:Static ui:FontTelerikIcons.AngleDown}"
+                                        FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}">
+                                    </Label>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </telerik:RadTemplatedButton.ContentTemplate>
+                    </telerik:RadTemplatedButton>
+                </HorizontalStackLayout>
+            </FlexLayout>
+        </telerik:RadBorder>
+
+        <FlexLayout AlignContent="Center" JustifyContent="SpaceBetween">
+            <telerik:RadTabView
+                x:Name="tabView"
+                HorizontalOptions="Start"
+                HeaderItemStyle="{StaticResource TabViewCustome}">
+                <telerik:TabViewItem
+                    HeaderText="Tab 1">
+                </telerik:TabViewItem>
+                <telerik:TabViewItem
+                    HeaderText="Tab 2">
+                </telerik:TabViewItem>
+                <telerik:TabViewItem
+                    HeaderText="Tab 3">
+                </telerik:TabViewItem>
+            </telerik:RadTabView>
+
+            <Grid>
+                <telerik:RadEntry
+                    HeightRequest="40"
+                    WidthRequest="405"
+                    Padding="30, 0, 0, 0"
+                    x:Name="EntryShareName"
+                    FontSize="16"
+                    Placeholder="Search..."
+                    PlaceholderColor="#99000000"
+                    AutomationId="radEntry" />
+                <Image
+                    HeightRequest="24"
+                    WidthRequest="24"
+                    Margin="2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Background="Transparent"
+                    Source="{StaticResource Search}" />
+            </Grid>
+        </FlexLayout>
+
+        <FlexLayout
+            Wrap="Wrap"
+            JustifyContent="SpaceBetween"
+            AlignItems="Start">
+            <views:MoneyOverviewCard
+                HeightRequest="172"
+                Title="Total Balance"
+                Margin="0, 0, 10, 0"
+                ContentText="$1,234.56"
+                Footer="+20% month over month"
+                FlexLayout.Grow="1"
+                MinimumWidthRequest="250" />
+            <views:MoneyOverviewCard
+                Margin="0, 0, 10, 0"
+                HeightRequest="172"
+                Title="Total Balance"
+                ContentText="2,405"
+                Footer="+33% month over month"
+                FlexLayout.Grow="1"
+                MinimumWidthRequest="250" />
+            <views:MoneyOverviewCard
+                Margin="0, 0, 10, 0"
+                HeightRequest="172"
+                Title="Total Balance"
+                ContentText="$1,234.56"
+                Footer="-8% month over month"
+                FlexLayout.Grow="1"
+                MinimumWidthRequest="250" />
+        </FlexLayout>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <chart:SfCartesianChart>
+                <chart:SfCartesianChart.Title>
+                    <Label
+                        Text="Title" 
+                        FontAttributes="Bold" />
+                </chart:SfCartesianChart.Title>
+                <chart:SfCartesianChart.XAxes>
+                    <chart:CategoryAxis />
+                </chart:SfCartesianChart.XAxes>
+
+                <chart:SfCartesianChart.YAxes>
+                    <chart:NumericalAxis />
+                </chart:SfCartesianChart.YAxes>
+
+            </chart:SfCartesianChart>
+        </Grid>
+    </VerticalStackLayout>
+</ContentView>

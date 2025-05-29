@@ -30,37 +30,44 @@ public class HomeViewModel : BaseViewModel
         {
             _selectedItem = value;
             NotifyPropertyChanged();
-            NavigateToPage();
+            NavigateToPageAsync();
         }
     }
 
-    public RelayCommand NavigateCommand { get; set; }
+    public AsyncRelayCommand NavigateCommand { get; set; }
 
 
     public HomeViewModel(IAppNavigator appNavigator) : base(appNavigator)
     {
-        NavigateCommand = new RelayCommand(NavigateToPage);
+        NavigateCommand = new AsyncRelayCommand(NavigateToPageAsync);
     }
 
     public ObservableCollection<NavigationItem> NavigationItems { get; set; }
     public ObservableCollection<NavigationGroup> NavigationGroups { get; set; }
 
-    private void NavigateToPage()
+    private Task NavigateToPageAsync()
     {
-
         if (SelectedItem is NavigationViewItem navItem)
         {
-            switch (navItem.Text)
+            var createViewTask = Task.Run(() =>
             {
-                case "Home":
-                    CurrentPage = new HomeView(); break;
-                case "SettingsPage":
-                //CurrentPage = new SettingsPage(); break;
-                case "AboutPage":
-                //CurrentPage = new AboutPage(); break;
-                default:
-                    CurrentPage = null; break;
+                switch (navItem.Text)
+                {
+                    case "Home":
+                        CurrentPage = new HomeView(); break;
+                    case "Browse":
+                        CurrentPage = new Dashboard(); break;
+                    case "AboutPage":
+                    //CurrentPage = new AboutPage(); break;
+                    default:
+                        CurrentPage = null; break;
+                }
             }
+            );
+
+            return createViewTask;
         }
+
+        return Task.CompletedTask;
     }
 }
