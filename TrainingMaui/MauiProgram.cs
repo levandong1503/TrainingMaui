@@ -2,14 +2,13 @@
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
-using Syncfusion.Maui.Toolkit.Hosting;
 using Telerik.Maui.Controls.Compatibility;
 using TrainingMaui.CoreMVVM.MVVM;
 using TrainingMaui.CoreMVVM.Navigation;
 using TrainingMaui.DataAccess.Models;
 using TrainingMaui.Features.Music.Pages;
 using TrainingMaui.Features.Music.ViewModels;
-using TrainingMaui.UI.Fonts.TelerikFont;
+using TrainingMaui.Features.Music.Views;
 using TrainingMaui.Utils.Encrypted;
 
 namespace TrainingMaui
@@ -22,7 +21,6 @@ namespace TrainingMaui
             builder
                 .UseTelerik()
                 .UseMauiApp<App>()
-                .ConfigureSyncfusionToolkit()
                 .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -36,6 +34,7 @@ namespace TrainingMaui
             //});
 
             builder.RegisterPages();
+            builder.RegisterContentView();
             builder.RegisterServices();
             builder.RegisterLog();
 
@@ -54,6 +53,13 @@ namespace TrainingMaui
         private static MauiAppBuilder RegisterPages(this MauiAppBuilder builder)
         {
             builder.Services.AddPage<Home, HomeViewModel>();
+            return builder;
+        }
+
+        private static MauiAppBuilder RegisterContentView(this MauiAppBuilder builder)
+        {
+            builder.Services.AddContentView<Dashboard, DashboardViewModel>();
+
             return builder;
         }
 
@@ -99,6 +105,14 @@ namespace TrainingMaui
             where TPage : BasePage where TViewModel : BaseViewModel
         {
             services.AddTransient<TPage>();
+            services.AddTransient<TViewModel>();
+            return services;
+        }
+
+        private static IServiceCollection AddContentView<TContentView, TViewModel>(this IServiceCollection services)
+            where TContentView : ContentView where TViewModel : BaseViewModel
+        {
+            services.AddTransient<TContentView>();
             services.AddTransient<TViewModel>();
             return services;
         }

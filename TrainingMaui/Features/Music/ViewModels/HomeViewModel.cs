@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Telerik.Maui.Controls.NavigationView;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
+using Telerik.Maui.Controls.NavigationView;
 using TrainingMaui.CoreMVVM.MVVM;
 using TrainingMaui.CoreMVVM.Navigation;
 using TrainingMaui.Features.Music.Models;
@@ -13,6 +15,8 @@ public class HomeViewModel : BaseViewModel
 {
     private View _currentPage;
     private object _selectedItem;
+    
+    [AllowNull]
     public View CurrentPage
     {
         get => _currentPage;
@@ -56,7 +60,7 @@ public class HomeViewModel : BaseViewModel
                     case "Home":
                         CurrentPage = new HomeView(); break;
                     case "Browse":
-                        CurrentPage = new Dashboard(); break;
+                        CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<Dashboard>(); break;
                     case "AboutPage":
                     //CurrentPage = new AboutPage(); break;
                     default:

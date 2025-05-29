@@ -1,44 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView
+    x:Class="TrainingMaui.Features.Music.Views.CardPlaylistView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="TrainingMaui.Features.Music.Views.CardPlaylistView"
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     x:Name="this">
     <VerticalStackLayout
+        Margin="15,10"
         Spacing="8"
-        Margin="15, 10"
         WidthRequest="235">
         <Grid>
-            <telerik:RadBorder
-                CornerRadius="12">
+            <telerik:RadBorder CornerRadius="12">
                 <Image
-                    Source="{Binding ImageSource, Source={x:Reference this}}"
                     Aspect="AspectFill"
                     HeightRequest="235"
+                    Source="{Binding ImageSource, Source={x:Reference this}}"
                     WidthRequest="235" />
             </telerik:RadBorder>
             <Label
-                Text="{Binding Title, Source={x:Reference this}}"
-                TextColor="White"
+                Margin="10"
                 FontAttributes="Bold"
                 FontSize="32"
-                VerticalOptions="Start"
                 HorizontalOptions="Start"
-                Margin="10"
-                Shadow="5" />
+                Shadow="5"
+                Text="{Binding Title, Source={x:Reference this}}"
+                TextColor="White"
+                VerticalOptions="Start" />
         </Grid>
 
         <Label
-            Text="{Binding Title, Source={x:Reference this}}"
             FontAttributes="Bold"
             FontSize="22"
-            LineBreakMode="TailTruncation" />
+            LineBreakMode="TailTruncation"
+            Text="{Binding Title, Source={x:Reference this}}" />
 
         <Label
-            Text="{Binding Description, Source={x:Reference this}}"
             FontSize="15"
-            TextColor="Black"
-            LineBreakMode="TailTruncation" />
+            LineBreakMode="TailTruncation"
+            Text="{Binding Description, Source={x:Reference this}}"
+            TextColor="Black" />
     </VerticalStackLayout>
 </ContentView>

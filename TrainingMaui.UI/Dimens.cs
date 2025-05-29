@@ -87,6 +87,7 @@ public class Dimens
     public static readonly double Height54 = 54;
 
     public static readonly double Width40 = 40;
+    public static readonly double Width48 = 48;
     public static readonly double Width51 = 51;
 
     public static readonly int CornerRadius3 = 3;
@@ -98,6 +99,7 @@ public class Dimens
     public static readonly Thickness RadBorderThickness0 = new(0);
     public static readonly Thickness RadBorderBottom01 = new(0, 0, 0, 1);
     public static readonly Thickness CornerRadius40 = new(40);
+    public static readonly Thickness CornerRadius48 = new(48);
 
 
     public static readonly double RotationY0 = 0;
