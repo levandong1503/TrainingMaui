@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainingMaui.Features.Music.Views.ArtistView"
              xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
              x:Name="this">
     <VerticalStackLayout
-        Spacing="8"
+        Spacing="{x:Static ui:Dimens.SpacingSm}"
         Padding="0"
         WidthRequest="144">
         <telerik:RadBorder

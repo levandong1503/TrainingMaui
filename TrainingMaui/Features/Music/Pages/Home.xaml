@@ -6,7 +6,7 @@
     xmlns:app="clr-namespace:TrainingMaui.CoreMVVM.MVVM;assembly=TrainingMaui.CoreMVVM"
     xmlns:local="clr-namespace:TrainingMaui.Features.Music.ViewModels"
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
-    xmlns:telerikFont="clr-namespace:TrainingMaui.UI.Fonts.TelerikFont;assembly=TrainingMaui.UI"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
     Title="Home">
     <app:BasePage.Resources>
     </app:BasePage.Resources>
@@ -31,13 +31,13 @@
                 <telerik:NavigationViewItem
                     Text="Home"
                     IsSelected="True"
-                    ImageSource="home.png"/>
+                    ImageSource="{x:Static ui:Icons.Home}"/>
                 <telerik:NavigationViewItem
                     Text="Browse"
-                    ImageSource="search.png" />
+                    ImageSource="{x:Static ui:Icons.Search}" />
                 <telerik:NavigationViewItem
                     Text="Radio"
-                    ImageSource="radio.png" />
+                    ImageSource="{x:Static ui:Icons.Radio}" />
                 <telerik:NavigationViewItem
                     Text="Header"
                     IsEnabled="False"
@@ -45,17 +45,20 @@
                     Style="{StaticResource HeaderGroupStyle}" />
                 <telerik:NavigationViewItem
                     Text="Playlists"
-                    ImageSource="list.png" />
+                    ImageSource="{x:Static ui:Icons.List}" />
                 <telerik:NavigationViewItem
                     Text="Song"
-                    ImageSource="music.png" />
+                    ImageSource="{x:Static ui:Icons.Music}" />
                 <telerik:NavigationViewItem
                     Text="Personalized picks"
-                    ImageSource="smile.png"/>
+                    ImageSource="{x:Static ui:Icons.Smile}"/>
             </telerik:RadNavigationView.Items>
             <telerik:RadNavigationView.Content>
-                <ContentView
-                    Content="{Binding CurrentPage}" />
+                <ScrollView
+                    Margin="20">
+                    <ContentView
+                        Content="{Binding CurrentPage}" />
+                </ScrollView>
             </telerik:RadNavigationView.Content>
         </telerik:RadNavigationView>
     </Grid>

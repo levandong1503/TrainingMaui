@@ -3,14 +3,15 @@
 <ResourceDictionary
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI">
 
     <Style
         TargetType="telerik:NavigationViewHeader"
         x:Key="NavigationHeaderStyle">
         <Setter
             Property="FontSize"
-            Value="20" />
+            Value="{x:Static ui:Dimens.FontSize20}" />
         <Setter
             Property="IsHeaderButtonVisible"
             Value="False" />
@@ -33,7 +34,7 @@
         x:Key="HeaderGroupStyle">
         <Setter
             Property="Spacing"
-            Value="-35" />
+            Value="{x:Static ui:Dimens.SpacingMinus35}" />
         <Setter
             Property="ImageWidth"
             Value="0" />
@@ -52,7 +53,7 @@
                                 Value="Transparent" />
                             <Setter
                                 Property="TextColor"
-                                Value="#000000" />
+                                Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
                     <VisualState
@@ -63,7 +64,7 @@
                                 Value="#80CBC4" />
                             <Setter
                                 Property="TextColor"
-                                Value="#000000" />
+                                Value="Black" />
                             <Setter
                                 Property="FontAttributes"
                                 Value="Bold" />

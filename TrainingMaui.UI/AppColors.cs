@@ -157,26 +157,6 @@ public static class AppColors
     public static readonly Color LightSmoke = Color.FromArgb("#F1F5F9");
 
     public static readonly Color OutlightLightness = Color.FromArgb("#F5F6F6");
-    #region Status Color
-
-    public static readonly Color Cadet = Color.FromArgb("#5F6A71");
-    public static readonly Color DarkCerulean = Color.FromArgb("#16397E");
-    public static readonly Color BrightYellow = Color.FromArgb("#FFAE2E");
-    public static readonly Color Maize = Color.FromArgb("#FFCA4C");
-    public static readonly Color PaleRobinEggBlue = Color.FromArgb("#A4DECF");
-    public static readonly Color PaleCyan = Color.FromArgb("#81D4FA");
-    public static readonly Color CandyPink = Color.FromArgb("#E57388");
-    public static readonly Color DarkPastelPurple = Color.FromArgb("#866CD0");
-    public static readonly Color BlackCoral = Color.FromArgb("#555E65");
-    public static readonly Color BabyBlueEyes = Color.FromArgb("#9ECBFF");
-    public static readonly Color SpaceCadet = Color.FromArgb("#152A5B");
-    public static readonly Color Onyx = Color.FromArgb("#393C40");
-    public static readonly Color Teal = Color.FromArgb("#0C797D");
-    public static readonly Color ChinesePink = Color.FromArgb("#E57399");
-    public static readonly Color Menthol = Color.FromArgb("#D4E79F");
-    public static readonly Color OutlineLight = Color.FromArgb("#E4E7E9");
-    public static readonly Color Melon = Color.FromArgb("#FFBFB7");
-    #endregion Status Color
 
     public static readonly Color SysSecondarySecondary = Color.FromArgb("#6495ED");
     public static readonly Color SysOnSurfaceOnSurfaceVariant = Color.FromArgb("#555E65");

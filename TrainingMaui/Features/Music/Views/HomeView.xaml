@@ -5,6 +5,7 @@
     x:Class="TrainingMaui.Features.Music.Views.HomeView"
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     xmlns:views="clr-namespace:TrainingMaui.Features.Music.Views"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
     Margin="50, 0">
 
 
@@ -81,7 +82,7 @@
             x:Key="SubHeadingArea">
             <Setter
                 Property="FontSize"
-                Value="16" />
+                Value="{x:Static ui:Dimens.FontSize16}" />
             <Setter
                 Property="FontAttributes"
                 Value="None" />
@@ -97,28 +98,10 @@
         </Style>
     </ContentView.Resources>
 
+    <VerticalStackLayout>
+        <FlexLayout
+            JustifyContent="SpaceBetween">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition
-                Height="*" />
-            <RowDefinition
-                Height="6*" />
-            <RowDefinition
-                Height="6*" />
-        </Grid.RowDefinitions>
-        
-        <Grid
-            Padding="15, 0"
-            Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition
-                    Width="2*" />
-                <ColumnDefinition
-                    Width="7*" />
-                <ColumnDefinition
-                    Width="*" />
-            </Grid.ColumnDefinitions>
 
             <telerik:RadBorder
                 CornerRadius="9"
@@ -151,24 +134,14 @@
                 AutomationId="border"
                 BorderThickness="1">
                 <telerik:RadButton
-                    Margin="0, 4"
                     x:Name="button4"
                     Text="Call to action"
                     BackgroundColor="Black"
-                    TextColor="White"/>
+                    TextColor="White" />
             </telerik:RadBorder>
-        </Grid>
+        </FlexLayout>
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition
-                    Height="*" />
-                <RowDefinition
-                    Height="*" />
-                <RowDefinition
-                    Height="9*" />
-            </Grid.RowDefinitions>
-
+        <VerticalStackLayout>
             <Label
                 Grid.Row="0"
                 Text="Title"
@@ -219,20 +192,11 @@
                     Description="Description of playlist">
                 </views:CardPlaylistView>
             </HorizontalStackLayout>
-        </Grid>
+        </VerticalStackLayout>
 
 
-        <Grid
+        <VerticalStackLayout
             Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition
-                    Height="*" />
-                <RowDefinition
-                    Height="*" />
-                <RowDefinition
-                    Height="9*" />
-            </Grid.RowDefinitions>
-
             <Label
                 Grid.Row="0"
                 Text="Title"
@@ -241,32 +205,32 @@
                 Grid.Row="1"
                 Text="SubHeading"
                 Style="{StaticResource SubHeadingArea}" />
-            
-            <HorizontalStackLayout
-                Grid.Row="2"
-                Spacing="28">
-                <views:ArtistView
-                    ImageSource="artistimage.png"
-                    ArtistName="Artist Name"
-                    Category="R&amp;B" />
-                <views:ArtistView
-                    ImageSource="artistimage.png"
-                    ArtistName="Artist Name"
-                    Category="R&amp;B" />
-                <views:ArtistView
-                    ImageSource="artistimage.png"
-                    ArtistName="Artist Name"
-                    Category="R&amp;B" />
-                <views:ArtistView
-                    ImageSource="artistimage.png"
-                    ArtistName="Artist Name"
-                    Category="R&amp;B" />
-                <views:ArtistView
-                    ImageSource="artistimage.png"
-                    ArtistName="Artist Name"
-                    Category="R&amp;B" />
-            </HorizontalStackLayout>
-        </Grid>
-    </Grid>
 
+            <FlexLayout
+                Grid.Row="2"
+                JustifyContent="SpaceEvenly"
+                Wrap="Wrap">
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+            </FlexLayout>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
 </ContentView>
