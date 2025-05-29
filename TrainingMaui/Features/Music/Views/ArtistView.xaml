@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingMaui.Features.Music.Views.ArtistView"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             x:Name="this">
+    <VerticalStackLayout
+        Spacing="8"
+        Padding="0"
+        WidthRequest="144">
+        <telerik:RadBorder
+            CornerRadius="12">
+            <Image
+                Source="{Binding ImageSource, Source={x:Reference this}}"
+                Aspect="AspectFill"
+                HeightRequest="144"
+                WidthRequest="144" />
+        </telerik:RadBorder>
+        <Label
+            Text="{Binding ArtistName, Source={x:Reference this}}"
+            FontSize="20"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Shadow="5" />
+        <Label
+            Text="{Binding Category, Source={x:Reference this}}"
+            FontSize="16"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Shadow="5" />
+    </VerticalStackLayout>
+</ContentView>

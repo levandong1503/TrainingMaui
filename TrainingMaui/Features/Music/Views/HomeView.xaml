@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrainingMaui.Features.Music.Views.HomeView"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+    xmlns:views="clr-namespace:TrainingMaui.Features.Music.Views"
+    Margin="50, 0">
+
+
+    <ContentView.Resources>
+        <Style
+            TargetType="telerik:RadButton"
+            x:Key="SeletedTabButton">
+            <Setter
+                Property="BackgroundColor"
+                Value="White" />
+            <Setter
+                Property="VisualStateManager.VisualStateGroups">
+                <Setter.Value>
+                    <VisualStateGroupList>
+                        <VisualStateGroup
+                            Name="CommonStates">
+                            <VisualState
+                                Name="Normal" />
+                            <VisualState
+                                Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter
+                                        Property="Background"
+                                        Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState
+                                Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter
+                                        Property="TextColor"
+                                        Value="Black" />
+                                    <Setter
+                                        Property="Background"
+                                        Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style
+            TargetType="telerik:RadButton"
+            x:Key="UnSeletedTabButton">
+            <Setter
+                Property="BackgroundColor"
+                Value="Transparent" />
+            <Setter
+                Property="BorderColor"
+                Value="Transparent" />
+            <Setter
+                Property="Margin"
+                Value="0, 4" />
+        </Style>
+
+        <Style
+            TargetType="Label"
+            x:Key="HeadingArea">
+            <Setter
+                Property="FontSize"
+                Value="34" />
+            <Setter
+                Property="FontAttributes"
+                Value="Bold" />
+            <Setter
+                Property="VerticalOptions"
+                Value="Center" />
+        </Style>
+
+        <Style
+            TargetType="Label"
+            x:Key="SubHeadingArea">
+            <Setter
+                Property="FontSize"
+                Value="16" />
+            <Setter
+                Property="FontAttributes"
+                Value="None" />
+            <Setter
+                Property="VerticalOptions"
+                Value="Center" />
+            <Setter
+                Property="TextColor"
+                Value="#454545" />
+            <Setter
+                Property="Margin"
+                Value="0,10" />
+        </Style>
+    </ContentView.Resources>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="6*" />
+            <RowDefinition
+                Height="6*" />
+        </Grid.RowDefinitions>
+        
+        <Grid
+            Padding="15, 0"
+            Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="2*" />
+                <ColumnDefinition
+                    Width="7*" />
+                <ColumnDefinition
+                    Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <telerik:RadBorder
+                CornerRadius="9"
+                AutomationId="border"
+                BorderThickness="1"
+                Padding="5, 0"
+                BackgroundColor="#F7F7F7">
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="5">
+                    <telerik:RadButton
+                        Margin="0, 4"
+                        x:Name="button1"
+                        Text="Tab 1"
+                        Style="{StaticResource SeletedTabButton}" />
+                    <telerik:RadButton
+                        x:Name="button2"
+                        Text="Tab 2"
+                        Style="{StaticResource UnSeletedTabButton}" />
+                    <telerik:RadButton
+                        x:Name="button3"
+                        Text="Tab 3"
+                        Style="{StaticResource UnSeletedTabButton}" />
+                </HorizontalStackLayout>
+            </telerik:RadBorder>
+
+            <telerik:RadBorder
+                Grid.Column="2"
+                CornerRadius="9"
+                AutomationId="border"
+                BorderThickness="1">
+                <telerik:RadButton
+                    Margin="0, 4"
+                    x:Name="button4"
+                    Text="Call to action"
+                    BackgroundColor="Black"
+                    TextColor="White"/>
+            </telerik:RadBorder>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="9*" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Text="Title"
+                Style="{StaticResource HeadingArea}" />
+            <Label
+                Grid.Row="1"
+                Text="SubHeading"
+                Style="{StaticResource SubHeadingArea}" />
+
+            <HorizontalStackLayout
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                Spacing="28">
+                <views:CardPlaylistView
+                    Grid.Row="2"
+                    ImageSource="playlistcoverimage.png"
+                    Title="Playlist 1"
+                    Description="Description of playlist">
+                </views:CardPlaylistView>
+                <views:CardPlaylistView
+                    Grid.Row="2"
+                    ImageSource="playlistcoverimage.png"
+                    Title="Playlist 1"
+                    Description="Description of playlist">
+                </views:CardPlaylistView>
+                <views:CardPlaylistView
+                    Grid.Row="2"
+                    ImageSource="playlistcoverimage.png"
+                    Title="Playlist 1"
+                    Description="Description of playlist">
+                </views:CardPlaylistView>
+                <views:CardPlaylistView
+                    Grid.Row="2"
+                    ImageSource="playlistcoverimage.png"
+                    Title="Playlist 1"
+                    Description="Description of playlist">
+                </views:CardPlaylistView>
+                <views:CardPlaylistView
+                    Grid.Row="2"
+                    ImageSource="playlistcoverimage.png"
+                    Title="Playlist 1"
+                    Description="Description of playlist">
+                </views:CardPlaylistView>
+                <views:CardPlaylistView
+                    Grid.Row="2"
+                    ImageSource="playlistcoverimage.png"
+                    Title="Playlist 1"
+                    Description="Description of playlist">
+                </views:CardPlaylistView>
+            </HorizontalStackLayout>
+        </Grid>
+
+
+        <Grid
+            Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="9*" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Text="Title"
+                Style="{StaticResource HeadingArea}" />
+            <Label
+                Grid.Row="1"
+                Text="SubHeading"
+                Style="{StaticResource SubHeadingArea}" />
+            
+            <HorizontalStackLayout
+                Grid.Row="2"
+                Spacing="28">
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+                <views:ArtistView
+                    ImageSource="artistimage.png"
+                    ArtistName="Artist Name"
+                    Category="R&amp;B" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Grid>
+
+</ContentView>
