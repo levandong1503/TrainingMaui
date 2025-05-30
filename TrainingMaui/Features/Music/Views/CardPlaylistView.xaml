@@ -6,9 +6,9 @@
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     x:Name="this">
     <VerticalStackLayout
-        Margin="15,10"
         Spacing="8"
-        WidthRequest="235">
+        WidthRequest="235"
+        Margin="2">
         <Grid>
             <telerik:RadBorder CornerRadius="12">
                 <Image

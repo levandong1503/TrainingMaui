@@ -28,7 +28,60 @@
         x:Key="NavigationViewItemStyle">
         <Setter Property="FontAttributes" Value="None" ></Setter>
     </Style>
-    
+
+    <Style
+        TargetType="telerik:RadButton"
+        x:Key="SeletedTabButton">
+        <Setter
+            Property="BackgroundColor"
+            Value="White" />
+        <Setter
+            Property="VisualStateManager.VisualStateGroups">
+            <Setter.Value>
+                <VisualStateGroupList>
+                    <VisualStateGroup
+                        Name="CommonStates">
+                        <VisualState
+                            Name="Normal" />
+                        <VisualState
+                            Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="Background"
+                                    Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="TextColor"
+                                    Value="Black" />
+                                <Setter
+                                    Property="Background"
+                                    Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        TargetType="telerik:RadButton"
+        x:Key="UnSeletedTabButton">
+        <Setter
+            Property="BackgroundColor"
+            Value="Transparent" />
+        <Setter
+            Property="BorderColor"
+            Value="Transparent" />
+        <Setter
+            Property="Margin"
+            Value="0, 4" />
+    </Style>
+
     <Style
         TargetType="telerik:NavigationViewItemView"
         x:Key="HeaderGroupStyle">
@@ -136,5 +189,16 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+    </Style>
+
+    <Style
+        TargetType="Label"
+        x:Key="Header5">
+        <Setter
+            Property="FontSize"
+            Value="{x:Static ui:Dimens.FontSize16}" />
+        <Setter
+            Property="FontAttributes"
+            Value="Bold" />
     </Style>
 </ResourceDictionary>

@@ -15,7 +15,7 @@
             >
             <Label
                 x:Name="TitleCard"
-                FontSize="{x:Static ui:Dimens.FontSize16}"
+                Style="{StaticResource Header5}"
                 Text="{Binding Title, Source={x:Reference this}}" />
             <Label
                 x:Name="ContentCard"

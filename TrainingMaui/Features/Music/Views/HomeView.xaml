@@ -10,58 +10,6 @@
 
 
     <ContentView.Resources>
-        <Style
-            TargetType="telerik:RadButton"
-            x:Key="SeletedTabButton">
-            <Setter
-                Property="BackgroundColor"
-                Value="White" />
-            <Setter
-                Property="VisualStateManager.VisualStateGroups">
-                <Setter.Value>
-                    <VisualStateGroupList>
-                        <VisualStateGroup
-                            Name="CommonStates">
-                            <VisualState
-                                Name="Normal" />
-                            <VisualState
-                                Name="PointerOver">
-                                <VisualState.Setters>
-                                    <Setter
-                                        Property="Background"
-                                        Value="White" />
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState
-                                Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter
-                                        Property="TextColor"
-                                        Value="Black" />
-                                    <Setter
-                                        Property="Background"
-                                        Value="White" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style
-            TargetType="telerik:RadButton"
-            x:Key="UnSeletedTabButton">
-            <Setter
-                Property="BackgroundColor"
-                Value="Transparent" />
-            <Setter
-                Property="BorderColor"
-                Value="Transparent" />
-            <Setter
-                Property="Margin"
-                Value="0, 4" />
-        </Style>
 
         <Style
             TargetType="Label"
@@ -145,50 +93,45 @@
                 Text="SubHeading"
                 Style="{StaticResource SubHeadingArea}" />
 
-            <telerik:RadWrapLayout
+            <FlexLayout
+                JustifyContent="SpaceBetween" Wrap="Wrap"
                 Grid.Row="2">
                 <views:CardPlaylistView
-                    Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
                 <views:CardPlaylistView
-                    Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
                 <views:CardPlaylistView
-                    Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
                 <views:CardPlaylistView
-                    Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
                 <views:CardPlaylistView
-                    Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
                 <views:CardPlaylistView
-                    Grid.Row="2"
                     ImageSource="playlistcoverimage.png"
                     Title="Playlist 1"
                     Description="Description of playlist">
                 </views:CardPlaylistView>
-            </telerik:RadWrapLayout>
+            </FlexLayout>
         </VerticalStackLayout>
 
 
         <VerticalStackLayout
-            Grid.Row="2">
+            Grid.Row="3">
             <Label
                 Grid.Row="0"
                 Text="Title"
@@ -198,7 +141,9 @@
                 Text="SubHeading"
                 Style="{StaticResource SubHeadingArea}" />
 
-            <telerik:RadWrapLayout
+            <FlexLayout
+                JustifyContent="SpaceBetween"
+                Wrap="Wrap"
                 Grid.Row="2">
                 <views:ArtistView
                     ImageSource="artistimage.png"
@@ -224,7 +169,7 @@
                     ImageSource="artistimage.png"
                     ArtistName="Artist Name"
                     Category="R&amp;B" />
-            </telerik:RadWrapLayout>
+            </FlexLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentView>
