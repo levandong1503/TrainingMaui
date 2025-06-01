@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="TrainingMaui.Features.Music.Views.ChatView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI">
+    <Grid ColumnDefinitions="2*, 4*, *">
+        <VerticalStackLayout>
+            <Label Style="{StaticResource Header5}" Text="App" />
+            <Grid>
+                <telerik:RadEntry
+                    x:Name="EntryShareName"
+                    Padding="30,0,0,0"
+                    AutomationId="radEntry"
+                    FontSize="16"
+                    HeightRequest="40"
+                    Placeholder="Search chats"
+                    PlaceholderColor="#99000000" />
+                <Image
+                    Margin="2"
+                    Background="Transparent"
+                    HeightRequest="24"
+                    HorizontalOptions="Start"
+                    Source="{StaticResource Search}"
+                    VerticalOptions="Center"
+                    WidthRequest="24" />
+            </Grid>
+            <telerik:RadCollectionView ItemsSource="{Binding ChatPeople}">
+                <telerik:RadCollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,5" ColumnDefinitions="Auto, *">
+                            <telerik:RadBorder
+                                Margin="0,0,10,0"
+                                CornerRadius="{x:Static ui:Dimens.CornerRadius48}"
+                                HeightRequest="48">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="48"
+                                    Source="{Binding Avatar}"
+                                    WidthRequest="{x:Static ui:Dimens.Width48}" />
+                            </telerik:RadBorder>
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="2"
+                                VerticalOptions="Center">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="End" />
+                                <Label
+                                    FontSize="Micro"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="1"
+                                    Text="{Binding NewestChat}"
+                                    TextColor="Black" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </telerik:RadCollectionView.ItemTemplate>
+            </telerik:RadCollectionView>
+        </VerticalStackLayout>
+    </Grid>
+</ContentView>

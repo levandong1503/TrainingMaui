@@ -3,14 +3,12 @@ using TrainingMaui.CoreMVVM.MVVM;
 
 namespace TrainingMaui.Features.Music.Models;
 
-public partial class Artist : BaseModel
+public partial class ChatPerson : BaseModel
 {
     [ObservableProperty]
-    public string _name;
-
+    private string _name = null!;
     [ObservableProperty]
-    public string _email;
-
+    private string _newestChat = null!;
     [ObservableProperty]
-    public ImageSource _imageSourcePath;
+    private ImageSource _avatar = null!;
 }

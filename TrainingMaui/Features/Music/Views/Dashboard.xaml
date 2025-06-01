@@ -10,58 +10,32 @@
     xmlns:views="clr-namespace:TrainingMaui.Features.Music.Views">
 
     <ContentView.Resources>
-        <Style
-            TargetType="telerik:TabViewContent">
-            <Setter
-                Property="IsVisible"
-                Value="Collapse" />
+        <Style TargetType="telerik:TabViewContent">
+            <Setter Property="IsVisible" Value="Collapse" />
         </Style>
 
-        <Style
-            x:Key="TabViewCustome"
-            TargetType="telerik:TabViewHeaderItem">
-            <Setter
-                Property="TextColor"
-                Value="#99000000" />
-            <Setter
-                Property="VisualStateManager.VisualStateGroups">
+        <Style x:Key="TabViewCustome" TargetType="telerik:TabViewHeaderItem">
+            <Setter Property="TextColor" Value="#99000000" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
                 <VisualStateGroupList>
-                    <VisualStateGroup
-                        Name="CommonStates">
-                        <VisualState
-                            Name="Normal">
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
                             <VisualState.Setters>
-                                <Setter
-                                    Property="BorderThickness"
-                                    Value="0" />
-                                <Setter
-                                    Property="Margin"
-                                    Value="5,5,5,5" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Margin" Value="5,5,5,5" />
                             </VisualState.Setters>
                         </VisualState>
-                        <VisualState
-                            Name="Disabled">
+                        <VisualState Name="Disabled">
                             <VisualState.Setters>
-                                <Setter
-                                    Property="TextColor"
-                                    Value="#61000000" />
+                                <Setter Property="TextColor" Value="#61000000" />
                             </VisualState.Setters>
                         </VisualState>
-                        <VisualState
-                            Name="Selected">
+                        <VisualState Name="Selected">
                             <VisualState.Setters>
-                                <Setter
-                                    Property="BackgroundColor"
-                                    Value="White" />
-                                <Setter
-                                    Property="BorderColor"
-                                    Value="Transparent" />
-                                <Setter
-                                    Property="Margin"
-                                    Value="5,5,5,5" />
-                                <Setter
-                                    Property="CornerRadius"
-                                    Value="5" />
+                                <Setter Property="BackgroundColor" Value="White" />
+                                <Setter Property="BorderColor" Value="Transparent" />
+                                <Setter Property="Margin" Value="5,5,5,5" />
+                                <Setter Property="CornerRadius" Value="5" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -69,46 +43,31 @@
             </Setter>
         </Style>
 
-        <Style
-            TargetType="telerik:TabViewHeader">
-            <Setter
-                Property="WidthRequest"
-                Value="200" />
-            <Setter
-                Property="HeightRequest"
-                Value="53" />
-            <Setter
-                Property="CornerRadius"
-                Value="70" />
+        <Style TargetType="telerik:TabViewHeader">
+            <Setter Property="WidthRequest" Value="200" />
+            <Setter Property="HeightRequest" Value="53" />
+            <Setter Property="CornerRadius" Value="70" />
         </Style>
 
-        <Style
-            TargetType="telerik:RadTabView">
-            <Setter
-                Property="WidthRequest"
-                Value="190" />
-            <Setter
-                Property="CornerRadius"
-                Value="20" />
+        <Style TargetType="telerik:RadTabView">
+            <Setter Property="WidthRequest" Value="190" />
+            <Setter Property="CornerRadius" Value="20" />
         </Style>
 
     </ContentView.Resources>
 
-    <VerticalStackLayout
-        Spacing="25">
+    <VerticalStackLayout Spacing="25">
         <telerik:RadBorder
-            Margin="20, 0"
+            Margin="20,0"
             BorderBrush="#E0E0E0"
             BorderThickness="{x:Static ui:Dimens.RadBorderBottom01}">
-            <FlexLayout
-                JustifyContent="SpaceBetween">
+            <FlexLayout JustifyContent="SpaceBetween">
                 <Label
                     FontAttributes="Bold"
                     FontSize="{x:Static ui:Dimens.FontSize20}"
                     Text="Dashboard app"
                     VerticalOptions="Center" />
-                <HorizontalStackLayout
-                    Spacing="{x:Static ui:Dimens.Spacing10}">
+                <HorizontalStackLayout Spacing="{x:Static ui:Dimens.Spacing10}">
                     <telerik:RadButton
                         FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}"
                         HeightRequest="{x:Static ui:Dimens.Height40}"
@@ -119,19 +78,12 @@
                         Style="{StaticResource HeaderBlackButton}"
                         Text="Share" />
 
-                    <telerik:RadTemplatedButton
-                        x:Name="AccountOptionButton"
-                        Style="{StaticResource TemplateButtonTransparent}">
+                    <telerik:RadTemplatedButton x:Name="AccountOptionButton" Style="{StaticResource TemplateButtonTransparent}">
                         <telerik:RadTemplatedButton.ContentTemplate>
                             <DataTemplate>
-                                <HorizontalStackLayout
-                                    Spacing="{x:Static ui:Dimens.Spacing10}"
-                                    VerticalOptions="End">
-                                    <telerik:RadBorder
-                                        CornerRadius="{x:Static ui:Dimens.CornerRadius40}">
-                                        <Image
-                                            Source="helenahills.png"
-                                            WidthRequest="{x:Static ui:Dimens.Width40}" />
+                                <HorizontalStackLayout Spacing="{x:Static ui:Dimens.Spacing10}" VerticalOptions="End">
+                                    <telerik:RadBorder CornerRadius="{x:Static ui:Dimens.CornerRadius40}">
+                                        <Image Source="helenahills.png" WidthRequest="{x:Static ui:Dimens.Width40}" />
                                     </telerik:RadBorder>
                                     <Label
                                         FontFamily="{x:Static telerikFontAliases:TelerikFontAliases.TelerikFontExamples}"
@@ -146,7 +98,7 @@
         </telerik:RadBorder>
 
         <FlexLayout
-            Margin="20, 0"
+            Margin="20,0"
             AlignContent="Center"
             JustifyContent="SpaceBetween">
             <!--
@@ -164,27 +116,25 @@
             -->
 
             <telerik:RadBorder
-                CornerRadius="9"
+                Padding="5,0"
                 AutomationId="border"
+                BackgroundColor="#F7F7F7"
                 BorderThickness="1"
-                Padding="5, 0"
-                BackgroundColor="#F7F7F7">
-                <HorizontalStackLayout
-                    HorizontalOptions="Center"
-                    Spacing="5">
+                CornerRadius="9">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
                     <telerik:RadButton
-                        Margin="0, 4"
                         x:Name="button1"
-                        Text="Tab 1"
-                        Style="{StaticResource SeletedTabButton}" />
+                        Margin="0,4"
+                        Style="{StaticResource SeletedTabButton}"
+                        Text="Tab 1" />
                     <telerik:RadButton
                         x:Name="button2"
-                        Text="Tab 2"
-                        Style="{StaticResource UnSeletedTabButton}" />
+                        Style="{StaticResource UnSeletedTabButton}"
+                        Text="Tab 2" />
                     <telerik:RadButton
                         x:Name="button3"
-                        Text="Tab 3"
-                        Style="{StaticResource UnSeletedTabButton}" />
+                        Style="{StaticResource UnSeletedTabButton}"
+                        Text="Tab 3" />
                 </HorizontalStackLayout>
             </telerik:RadBorder>
 
@@ -215,7 +165,7 @@
             Wrap="Wrap">
             <views:MoneyOverviewCard
                 Title="Total Balance"
-                Margin="10, 0"
+                Margin="10,0"
                 ContentText="$1,234.56"
                 FlexLayout.Grow="1"
                 Footer="+20% month over month"
@@ -223,7 +173,7 @@
                 MinimumWidthRequest="250" />
             <views:MoneyOverviewCard
                 Title="Total Balance"
-                Margin="10, 0"
+                Margin="10,0"
                 ContentText="2,405"
                 FlexLayout.Grow="1"
                 Footer="+33% month over month"
@@ -231,7 +181,7 @@
                 MinimumWidthRequest="250" />
             <views:MoneyOverviewCard
                 Title="Total Balance"
-                Margin="10, 0"
+                Margin="10,0"
                 ContentText="$1,234.56"
                 FlexLayout.Grow="1"
                 Footer="-8% month over month"
@@ -239,26 +189,18 @@
                 MinimumWidthRequest="250" />
         </FlexLayout>
 
-        <Grid
-            Margin="20, 0"
-            ColumnDefinitions="3*, 2*">
+        <Grid Margin="20,0" ColumnDefinitions="3*, 2*">
 
             <telerik:RadBorder
                 Grid.Column="0"
-                BorderThickness="1"
+                Margin="0,0,20,0"
                 BorderColor="#E0E0E0"
-                CornerRadius="8"
-                Margin="0,0,20,0">
-                <VerticalStackLayout
-                    Padding="20"
-                    Spacing="10">
+                BorderThickness="1"
+                CornerRadius="8">
+                <VerticalStackLayout Padding="20" Spacing="10">
 
-                    <Label
-                        Text="Title"
-                        Style="{StaticResource Header5}" />
-                    <telerik:RadCartesianChart
-                        x:Name="chart"
-                        HeightRequest="448">
+                    <Label Style="{StaticResource Header5}" Text="Title" />
+                    <telerik:RadCartesianChart x:Name="chart" HeightRequest="448">
                         <telerik:RadCartesianChart.HorizontalAxis>
                             <telerik:DateTimeContinuousAxis
                                 LabelFormat="dd MMM"
@@ -274,12 +216,10 @@
                                 Stroke="Black"
                                 StrokeThickness="5">
                                 <telerik:LineSeries.ValueBinding>
-                                    <telerik:PropertyNameDataPointBinding
-                                        PropertyName="Value" />
+                                    <telerik:PropertyNameDataPointBinding PropertyName="Value" />
                                 </telerik:LineSeries.ValueBinding>
                                 <telerik:LineSeries.CategoryBinding>
-                                    <telerik:PropertyNameDataPointBinding
-                                        PropertyName="Date" />
+                                    <telerik:PropertyNameDataPointBinding PropertyName="Date" />
                                 </telerik:LineSeries.CategoryBinding>
                             </telerik:LineSeries>
                         </telerik:RadCartesianChart.Series>
@@ -289,43 +229,34 @@
 
             <telerik:RadBorder
                 Grid.Column="1"
-                BorderThickness="1"
                 BorderColor="#E0E0E0"
+                BorderThickness="1"
                 CornerRadius="8">
-                <VerticalStackLayout
-                    Padding="20"
-                    Spacing="10">
-                    <Label
-                        Text="Title"
-                        Style="{StaticResource Header5}" />
-                    <Grid
-                        RowDefinitions="Auto, *">
+                <VerticalStackLayout Padding="20" Spacing="10">
+                    <Label Style="{StaticResource Header5}" Text="Title" />
+                    <Grid RowDefinitions="Auto, *">
                         <telerik:RadItemsControl
                             Grid.Row="0"
                             AutomationId="usersList"
                             ItemsSource="{Binding Artists}">
                             <telerik:RadItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid
-                                        Padding="0,5"
-                                        ColumnDefinitions="Auto, *">
+                                    <Grid Padding="0,5" ColumnDefinitions="Auto, *">
                                         <telerik:RadBorder
-                                            HeightRequest="48"
+                                            Margin="0,0,10,0"
                                             CornerRadius="{x:Static ui:Dimens.CornerRadius48}"
-                                            Margin="0,0,10,0">
+                                            HeightRequest="48">
                                             <Image
-                                                Source="{Binding ImageSourcePath}"
-                                                WidthRequest="{x:Static ui:Dimens.Width48}"
+                                                Aspect="AspectFill"
                                                 HeightRequest="48"
-                                                Aspect="AspectFill" />
+                                                Source="{Binding ImageSourcePath}"
+                                                WidthRequest="{x:Static ui:Dimens.Width48}" />
                                         </telerik:RadBorder>
                                         <VerticalStackLayout
                                             Grid.Column="1"
                                             Spacing="2"
                                             VerticalOptions="Center">
-                                            <Label
-                                                Text="{Binding Name}"
-                                                VerticalTextAlignment="End" />
+                                            <Label Text="{Binding Name}" VerticalTextAlignment="End" />
                                             <Label
                                                 FontSize="Micro"
                                                 Text="{Binding Email}"
@@ -340,61 +271,62 @@
             </telerik:RadBorder>
         </Grid>
 
-        <Grid
-            Margin="20, 0"
-            ColumnDefinitions="2*, 3*">
+        <Grid Margin="20,0" ColumnDefinitions="2*, 3*">
             <telerik:RadBorder
-                Padding="20"
                 Margin="0,0,20,0"
-                BorderThickness="1"
+                Padding="20"
                 BorderColor="#E0E0E0"
+                BorderThickness="1"
                 CornerRadius="8">
                 <VerticalStackLayout Spacing="20">
-                    <Label
-                        Text="Title"
-                        Style="{StaticResource Header5}"/>
+                    <Label Style="{StaticResource Header5}" Text="Title" />
                     <telerik:RadDataGrid
-                        ItemsSource="{Binding ChangeWebSites}"
-                        UserSortMode="None"
-                        UserFilterMode="Disabled"
-                        UserEditMode="None"
-                        CanUserResizeColumns="False"
-                        BorderBrush="Transparent"
                         AutoGenerateColumns="True"
-                        UserGroupMode="Disabled">
-                    </telerik:RadDataGrid>
+                        BorderBrush="Transparent"
+                        CanUserResizeColumns="False"
+                        ItemsSource="{Binding ChangeWebSites}"
+                        UserEditMode="None"
+                        UserFilterMode="Disabled"
+                        UserGroupMode="Disabled"
+                        UserSortMode="None" />
                 </VerticalStackLayout>
             </telerik:RadBorder>
 
             <telerik:RadBorder
                 Grid.Column="1"
                 Padding="20"
-                BorderThickness="1"
                 BorderColor="#E0E0E0"
+                BorderThickness="1"
                 CornerRadius="8">
-                <VerticalStackLayout
-                    Padding="20"
-                    Spacing="10">
-                    <Label
-                        Text="Title"
-                        Style="{StaticResource Header5}" />
-                    <telerik:RadCartesianChart
-                        HeightRequest="448">
+                <VerticalStackLayout Padding="20" Spacing="10">
+                    <Label Style="{StaticResource Header5}" Text="Title" />
+                    <telerik:RadCartesianChart HeightRequest="448">
                         <telerik:RadCartesianChart.HorizontalAxis>
-                            <telerik:CategoricalAxis
-                                LabelFitMode="MultiLine" />
+                            <telerik:CategoricalAxis LabelFitMode="MultiLine" />
                         </telerik:RadCartesianChart.HorizontalAxis>
                         <telerik:RadCartesianChart.VerticalAxis>
-                            <telerik:NumericalAxis
-                                LabelFitMode="MultiLine" />
+                            <telerik:NumericalAxis LabelFitMode="MultiLine" LineColor="Transparent" />
                         </telerik:RadCartesianChart.VerticalAxis>
                         <telerik:RadCartesianChart.Series>
                             <telerik:BarSeries
-                                ValueBinding="Value"
                                 CategoryBinding="Month"
-                                ItemsSource="{Binding BarChartData}">
-                            </telerik:BarSeries>
+                                ItemsSource="{Binding BarChartData}"
+                                ValueBinding="Value" />
                         </telerik:RadCartesianChart.Series>
+                        <telerik:RadCartesianChart.Palette>
+                            <telerik:ChartPalette>
+                                <telerik:ChartPalette.Entries>
+                                    <telerik:PaletteEntry FillColor="Black" StrokeColor="Black" />
+                                </telerik:ChartPalette.Entries>
+                            </telerik:ChartPalette>
+                        </telerik:RadCartesianChart.Palette>
+                        <telerik:RadCartesianChart.Grid>
+                            <telerik:CartesianChartGrid
+                                MajorLineColor="Gray"
+                                MajorLineThickness="0.5"
+                                MajorLinesVisibility="Y"
+                                StripLinesVisibility="None" />
+                        </telerik:RadCartesianChart.Grid>
                     </telerik:RadCartesianChart>
                 </VerticalStackLayout>
             </telerik:RadBorder>

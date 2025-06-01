@@ -1,17 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.Extensions.DependencyInjection;
-using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using Telerik.Maui.Controls.NavigationView;
 using TrainingMaui.CoreMVVM.MVVM;
 using TrainingMaui.CoreMVVM.Navigation;
-using TrainingMaui.Features.Music.Models;
 using TrainingMaui.Features.Music.Views;
-using Windows.UI.ApplicationSettings;
 
 namespace TrainingMaui.Features.Music.ViewModels;
 
-public class HomeViewModel : BaseViewModel
+public partial class HomeViewModel : BaseViewModel
 {
     private View _currentPage;
     private object _selectedItem;
@@ -40,14 +36,10 @@ public class HomeViewModel : BaseViewModel
 
     public AsyncRelayCommand NavigateCommand { get; set; }
 
-
     public HomeViewModel(IAppNavigator appNavigator) : base(appNavigator)
     {
         NavigateCommand = new AsyncRelayCommand(NavigateToPageAsync);
     }
-
-    public ObservableCollection<NavigationItem> NavigationItems { get; set; }
-    public ObservableCollection<NavigationGroup> NavigationGroups { get; set; }
 
     private Task NavigateToPageAsync()
     {
@@ -61,8 +53,8 @@ public class HomeViewModel : BaseViewModel
                         CurrentPage = new HomeView(); break;
                     case "Browse":
                         CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<Dashboard>(); break;
-                    case "AboutPage":
-                    //CurrentPage = new AboutPage(); break;
+                    case "Radio":
+                        CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<ChatView>();; break;
                     default:
                         CurrentPage = null; break;
                 }
@@ -73,5 +65,11 @@ public class HomeViewModel : BaseViewModel
         }
 
         return Task.CompletedTask;
+    }
+
+    [RelayCommand]
+    private void CallToAction()
+    {
+        CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<ChatView>();
     }
 }

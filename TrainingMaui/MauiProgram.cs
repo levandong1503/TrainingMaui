@@ -59,7 +59,7 @@ namespace TrainingMaui
         private static MauiAppBuilder RegisterContentView(this MauiAppBuilder builder)
         {
             builder.Services.AddContentView<Dashboard, DashboardViewModel>();
-
+            builder.Services.AddContentView<ChatView, ChatViewModel>();
             return builder;
         }
 

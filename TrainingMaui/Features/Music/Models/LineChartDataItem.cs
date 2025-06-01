@@ -1,7 +1,13 @@
-﻿namespace TrainingMaui.Features.Music.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using TrainingMaui.CoreMVVM.MVVM;
 
-public class LineChartDataItem
+namespace TrainingMaui.Features.Music.Models;
+
+public partial class LineChartDataItem : BaseModel
 {
-    public DateTime Date { set; get; }
-    public double Value { set; get; }
+    [ObservableProperty]
+    private DateTime _date;
+
+    [ObservableProperty]
+    private double _value;
 }

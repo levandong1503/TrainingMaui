@@ -110,6 +110,9 @@
 	  <MauiXaml Update="Features\Music\Views\MoneyOverviewCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Views\ChatView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\FontIconResource.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -135,6 +138,9 @@
 	  </Compile>
 	  <Compile Update="Features\Music\Views\HomeView.xaml.cs">
 	    <DependentUpon>HomeView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Features\Music\Views\ChatView.xaml.cs">
+	    <DependentUpon>ChatView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

@@ -1,9 +1,13 @@
-﻿using TrainingMaui.CoreMVVM.MVVM;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using TrainingMaui.CoreMVVM.MVVM;
 
 namespace TrainingMaui.Features.Music.Models;
 
-public class BarChartDataItem : BaseModel
+public partial class BarChartDataItem : BaseModel
 {
-    public string Month { get; set; } = null!;
-    public double Value { get; set; }
+    [ObservableProperty]
+    public string _month;
+
+    [ObservableProperty]
+    public double _value;
 }
