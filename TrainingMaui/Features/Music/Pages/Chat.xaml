@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <app:BasePage
+    x:Class="TrainingMaui.Features.Music.Pages.Chat"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:app="clr-namespace:TrainingMaui.CoreMVVM.MVVM;assembly=TrainingMaui.CoreMVVM"
     xmlns:local="clr-namespace:TrainingMaui.Features.Music.ViewModels"
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
-    x:Class="TrainingMaui.Features.Music.Pages.Chat"
     Title="App">
-    <Grid
-        ColumnDefinitions="2*,4*,*">
-        <VerticalStackLayout
-            Spacing="24"
-            Margin="0, 24, 0, 0">
+    <Grid ColumnDefinitions="2*,4*,*">
+        <VerticalStackLayout Margin="0,24,0,0" Spacing="24">
             <Label
-                Margin="24, 0"
+                Margin="24,0"
                 FontAttributes="Bold"
                 FontSize="{x:Static ui:Dimens.FontSize20}"
-                VerticalOptions="Center"
-                Text="App" />
-            <Grid
-                Margin="24, 0">
+                Text="App"
+                VerticalOptions="Center" />
+            <Grid Margin="24,0">
                 <telerik:RadEntry
                     x:Name="EntryShareName"
                     Padding="30,0,0,0"
@@ -38,15 +34,12 @@
                     VerticalOptions="Center"
                     WidthRequest="24" />
             </Grid>
-            <telerik:RadCollectionView
-                ItemsSource="{Binding ChatPeople}">
+            <telerik:RadCollectionView ItemsSource="{Binding ChatPeople}">
                 <telerik:RadCollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid
-                            Padding="0,5"
-                            ColumnDefinitions="Auto, *">
+                        <Grid Padding="0,5" ColumnDefinitions="Auto, *">
                             <telerik:RadBorder
-                                Margin="12, 16"
+                                Margin="12,16"
                                 CornerRadius="{x:Static ui:Dimens.CornerRadius48}"
                                 HeightRequest="48">
                                 <Image
@@ -60,10 +53,11 @@
                                 Spacing="2"
                                 VerticalOptions="Center">
                                 <Label
+                                    FontSize="{x:Static ui:Dimens.FontSize20}"
                                     Text="{Binding Name}"
                                     VerticalTextAlignment="End" />
                                 <Label
-                                    FontSize="Micro"
+                                    FontSize="{x:Static ui:Dimens.FontSize16}"
                                     LineBreakMode="TailTruncation"
                                     MaxLines="1"
                                     Text="{Binding NewestChat}"
@@ -75,265 +69,269 @@
             </telerik:RadCollectionView>
         </VerticalStackLayout>
 
-        <Grid
+        <telerik:RadBorder
             Grid.Column="1"
-            RowDefinitions="*, 12*, *">
-            <telerik:RadDockLayout>
-                <Grid
-                    telerik:RadDockLayout.Dock="Left"
-                    Padding="0,5"
-                    ColumnDefinitions="Auto, *">
-                    <telerik:RadBorder
-                        Margin="12, 16"
-                        CornerRadius="{x:Static ui:Dimens.CornerRadius48}"
-                        HeightRequest="48">
-                        <Image
-                            Aspect="AspectFill"
-                            HeightRequest="48"
-                            Source="helenahills.png"
-                            WidthRequest="{x:Static ui:Dimens.Width48}" />
-                    </telerik:RadBorder>
+            BorderColor="{x:Static ui:AppColors.Gray88}"
+            BorderThickness="1,0,1,0">
+            <Grid RowDefinitions="80, 12*, *">
+                <telerik:RadBorder BorderColor="{x:Static ui:AppColors.Gray88}" BorderThickness="0,0,0,1">
+                    <telerik:RadDockLayout>
+                        <Grid
+                            Padding="0,5"
+                            telerik:RadDockLayout.Dock="Left"
+                            ColumnDefinitions="Auto, *">
+                            <telerik:RadBorder
+                                Margin="12,16"
+                                CornerRadius="{x:Static ui:Dimens.CornerRadius48}"
+                                HeightRequest="48">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="48"
+                                    Source="helenahills.png"
+                                    WidthRequest="{x:Static ui:Dimens.Width48}" />
+                            </telerik:RadBorder>
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="2"
+                                VerticalOptions="Center">
+                                <Label Text="Helena Hills" VerticalTextAlignment="End" />
+                                <Label
+                                    FontSize="Micro"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="1"
+                                    Text="Active 20 ago"
+                                    TextColor="{x:Static ui:AppColors.Gray27}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                        <HorizontalStackLayout
+                            telerik:RadDockLayout.Dock="Right"
+                            HorizontalOptions="End"
+                            Spacing="5"
+                            VerticalOptions="Center">
+                            <telerik:RadButton
+                                Padding="8"
+                                BorderColor="Transparent"
+                                CornerRadius="46"
+                                ImageSource="phone.png" />
+                            <telerik:RadButton
+                                Padding="8"
+                                BorderColor="Transparent"
+                                CornerRadius="46"
+                                ImageSource="video.png" />
+                        </HorizontalStackLayout>
+                    </telerik:RadDockLayout>
+                </telerik:RadBorder>
+
+                <ScrollView
+                    x:Name="ScrollChatLayout"
+                    Grid.Row="1"
+                    VerticalScrollBarVisibility="Default">
                     <VerticalStackLayout
-                        Grid.Column="1"
-                        Spacing="2"
-                        VerticalOptions="Center">
-                        <Label
-                            Text="Helena Hills"
-                            VerticalTextAlignment="End" />
-                        <Label
-                            FontSize="Micro"
-                            LineBreakMode="TailTruncation"
-                            MaxLines="1"
-                            Text="Active 20 ago"
-                            TextColor="{x:Static ui:AppColors.Gray27}" />
+                        x:Name="ChatLayout"
+                        Margin="24,8"
+                        BindableLayout.ItemTemplateSelector="{StaticResource chatDataTemplateSelector}"
+                        BindableLayout.ItemsSource="{Binding ChatContents}"
+                        Spacing="8">
+                        <!--<telerik:RadBorder
+                            BackgroundColor="Black"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="End">
+                            <Label
+                                Padding="12"
+                                Text="No honestly I’m thinking of a career pivot"
+                                TextColor="White" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="Black"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="End">
+                            <Label
+                                Padding="12"
+                                Text="This is the main chat template"
+                                TextColor="White" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="Oh?"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="Cool"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="How does it work?"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="Black"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="End">
+                            <Label
+                                Padding="12"
+                                Text="Simple"
+                                TextColor="White" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="Black"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="End">
+                            <Label
+                                Padding="12"
+                                MaximumWidthRequest="480"
+                                Text="You just edit any text to type in the conversation you want to show, and delete any bubbles you don’t want to use"
+                                TextColor="White" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="Hmmm"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="I think i get it"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="Will head to the Help Center if I have more questions tho"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="Hmmm"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="I think i get it"
+                                TextColor="Black" />
+                        </telerik:RadBorder>
+
+                        <telerik:RadBorder
+                            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+                            CornerRadius="16,16,4,16"
+                            HorizontalOptions="Start">
+                            <Label
+                                Padding="12"
+                                Text="Will head to the Help Center if I have more questions tho"
+                                TextColor="Black" />
+                        </telerik:RadBorder>-->
                     </VerticalStackLayout>
+                </ScrollView>
+                <Grid Grid.Row="2">
+                    <telerik:RadEntry
+                        Margin="24"
+                        HeightRequest="40"
+                        Placeholder="Enter yor message" />
+                    <Image
+                        Margin="0,0,34,0"
+                        HorizontalOptions="End"
+                        Source="mic.png"
+                        WidthRequest="24" />
+                    <Image
+                        Margin="0,0,64,0"
+                        HorizontalOptions="End"
+                        Source="smilegray.png"
+                        WidthRequest="24" />
+                    <Image
+                        Margin="0,0,94,0"
+                        HorizontalOptions="End"
+                        Source="imagegray.png"
+                        WidthRequest="24" />
                 </Grid>
-                <HorizontalStackLayout
-                    telerik:RadDockLayout.Dock="Right"
-                    VerticalOptions="Center"
-                    HorizontalOptions="End"
-                    Spacing="5">
-                    <telerik:RadButton
-                        Padding="8"
-                        ImageSource="phone.png"
-                        BorderColor="Transparent"
-                        CornerRadius="46" />
-                    <telerik:RadButton
-                        Padding="8"
-                        ImageSource="video.png"
-                        BorderColor="Transparent"
-                        CornerRadius="46" />
-                </HorizontalStackLayout>
-            </telerik:RadDockLayout>
-
-            <ScrollView
-                Grid.Row="1"
-                VerticalScrollBarVisibility="Default">
-                <VerticalStackLayout
-                    Spacing="8"
-                    Margin="24, 8">
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="End"
-                        BackgroundColor="Black">
-                        <Label
-                            Text="No honestly I’m thinking of a career pivot"
-                            TextColor="White"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="End"
-                        BackgroundColor="Black">
-                        <Label
-                            Text="This is the main chat template"
-                            TextColor="White"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="Oh?"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="Cool"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="How does it work?"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="End"
-                        BackgroundColor="Black">
-                        <Label
-                            Text="Simple"
-                            TextColor="White"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="End"
-                        BackgroundColor="Black">
-                        <Label
-                            Text="You just edit any text to type in the conversation you want to show, and delete any bubbles you don’t want to use"
-                            MaximumWidthRequest="480"
-                            TextColor="White"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="Hmmm"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="I think i get it"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="Will head to the Help Center if I have more questions tho"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="Hmmm"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="I think i get it"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-
-                    <telerik:RadBorder
-                        CornerRadius="16,16,4,16"
-                        HorizontalOptions="Start"
-                        BackgroundColor="{x:Static ui:AppColors.Gray88}">
-                        <Label
-                            Text="Will head to the Help Center if I have more questions tho"
-                            TextColor="Black"
-                            Padding="12" />
-                    </telerik:RadBorder>
-                </VerticalStackLayout>
-            </ScrollView>
-            <Grid
-                Grid.Row="2">
-                <telerik:RadEntry
-                    HeightRequest="40"
-                    Margin="24"
-                    Placeholder="Enter yor message">
-                </telerik:RadEntry>
-                <Image
-                    WidthRequest="24"
-                    Source="mic.png"
-                    HorizontalOptions="End"
-                    Margin="0,0,34,0" />
-                <Image
-                    WidthRequest="24"
-                    Source="smilegray.png"
-                    HorizontalOptions="End"
-                    Margin="0,0,64,0" />
-                <Image
-                    WidthRequest="24"
-                    Source="imagegray.png"
-                    HorizontalOptions="End"
-                    Margin="0,0,94,0" />
             </Grid>
-        </Grid>
+        </telerik:RadBorder>
 
-        <VerticalStackLayout
-            Grid.Column="2">
+        <VerticalStackLayout Grid.Column="2">
             <telerik:RadBorder
+                Margin="40,0,40,20"
                 CornerRadius="128"
-                WidthRequest="128"
-                Margin="40, 0, 40, 20">
-                <Image
-                    Aspect="Fill"
-                    Source="helenahills.png" />
+                WidthRequest="128">
+                <Image Aspect="Fill" Source="helenahills.png" />
             </telerik:RadBorder>
             <Label
-                Text="Helena"
                 FontSize="20"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                Text="Helena" />
             <Label
+                FontSize="{x:Static ui:Dimens.FontSize16}"
+                HorizontalOptions="Center"
                 Text="Active 20m ago"
-                FontSize="16"
-                TextColor="{x:Static ui:AppColors.Gray27}"
-                HorizontalOptions="Center" />
+                TextColor="{x:Static ui:AppColors.Gray27}" />
             <telerik:RadButton
-                Text="View profile"
-                TextColor="White"
+                Margin="12,24"
+                BackgroundColor="Black"
+                CornerRadius="8"
                 HeightRequest="40"
                 MaximumWidthRequest="208"
-                BackgroundColor="Black"
-                CornerRadius="8" />
+                Text="View profile"
+                TextColor="White" />
 
-            <VerticalStackLayout
-                Margin="0, 10, 0, 0"
-                MaximumWidthRequest="208">
+            <VerticalStackLayout Margin="0,10,0,0" MaximumWidthRequest="208">
                 <telerik:RadButton
-                    Text="Search chat"
+                    HorizontalContentAlignment="Start"
+                    BorderColor="Transparent"
+                    FontSize="{x:Static ui:Dimens.FontSize16}"
                     ImageSource="search.png"
-                    BorderColor="Transparent"
-                    HorizontalContentAlignment="Start" />
+                    Text="Search chat" />
                 <telerik:RadButton
-                    Text="Sent images"
+                    HorizontalContentAlignment="Start"
+                    BorderColor="Transparent"
+                    FontSize="{x:Static ui:Dimens.FontSize16}"
                     ImageSource="imagedark.png"
-                    BorderColor="Transparent"
-                    HorizontalContentAlignment="Start" />
+                    Text="Sent images" />
                 <telerik:RadButton
-                    Text="More images"
-                    ImageSource="morehorizontal.png"
+                    HorizontalContentAlignment="Start"
                     BorderColor="Transparent"
-                    HorizontalContentAlignment="Start" />
+                    FontSize="{x:Static ui:Dimens.FontSize16}"
+                    ImageSource="morehorizontal.png"
+                    Text="More images" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </Grid>

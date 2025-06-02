@@ -29,6 +29,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\TrainingMaui.Utils\TrainingMaui.Utils.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Resources\ColorResource.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

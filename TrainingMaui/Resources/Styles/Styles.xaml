@@ -1,68 +1,39 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
 <ResourceDictionary
-    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI">
 
-    <Style
-        TargetType="telerik:NavigationViewHeader"
-        x:Key="NavigationHeaderStyle">
-        <Setter
-            Property="IsVisible"
-            Value="Visible" />
-        <Setter
-            Property="FontSize"
-            Value="{x:Static ui:Dimens.FontSize20}" />
-        <Setter
-            Property="IsHeaderButtonVisible"
-            Value="False" />
-        <Setter
-            Property="FontFamily"
-            Value="Helvetica" />
-        <Setter
-            Property="FontAttributes"
-            Value="Bold" />
+    <Style x:Key="NavigationHeaderStyle" TargetType="telerik:NavigationViewHeader">
+        <Setter Property="IsVisible" Value="Visible" />
+        <Setter Property="FontSize" Value="{x:Static ui:Dimens.FontSize20}" />
+        <Setter Property="IsHeaderButtonVisible" Value="False" />
+        <Setter Property="FontFamily" Value="Helvetica" />
+        <Setter Property="FontAttributes" Value="Bold" />
     </Style>
 
-    <Style
-        TargetType="telerik:NavigationViewItemView"
-        x:Key="NavigationViewItemStyle">
-        <Setter Property="FontAttributes" Value="None" ></Setter>
+    <Style x:Key="NavigationViewItemStyle" TargetType="telerik:NavigationViewItemView">
+        <Setter Property="FontAttributes" Value="None" />
     </Style>
 
-    <Style
-        TargetType="telerik:RadButton"
-        x:Key="SeletedTabButton">
-        <Setter
-            Property="BackgroundColor"
-            Value="White" />
-        <Setter
-            Property="VisualStateManager.VisualStateGroups">
+    <Style x:Key="SeletedTabButton" TargetType="telerik:RadButton">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
             <Setter.Value>
                 <VisualStateGroupList>
-                    <VisualStateGroup
-                        Name="CommonStates">
-                        <VisualState
-                            Name="Normal" />
-                        <VisualState
-                            Name="PointerOver">
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal" />
+                        <VisualState Name="PointerOver">
                             <VisualState.Setters>
-                                <Setter
-                                    Property="Background"
-                                    Value="White" />
+                                <Setter Property="Background" Value="White" />
                             </VisualState.Setters>
                         </VisualState>
-                        <VisualState
-                            Name="Pressed">
+                        <VisualState Name="Pressed">
                             <VisualState.Setters>
-                                <Setter
-                                    Property="TextColor"
-                                    Value="Black" />
-                                <Setter
-                                    Property="Background"
-                                    Value="White" />
+                                <Setter Property="TextColor" Value="Black" />
+                                <Setter Property="Background" Value="White" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -71,122 +42,36 @@
         </Setter>
     </Style>
 
-    <Style
-        TargetType="telerik:RadButton"
-        x:Key="UnSeletedTabButton">
-        <Setter
-            Property="BackgroundColor"
-            Value="Transparent" />
-        <Setter
-            Property="BorderColor"
-            Value="Transparent" />
-        <Setter
-            Property="Margin"
-            Value="0, 4" />
+    <Style x:Key="UnSeletedTabButton" TargetType="telerik:RadButton">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="Margin" Value="0, 4" />
     </Style>
 
-    <Style
-        TargetType="telerik:NavigationViewItemView"
-        x:Key="HeaderGroupStyle">
-        <Setter
-            Property="Spacing"
-            Value="{x:Static ui:Dimens.SpacingMinus35}" />
-        <Setter
-            Property="ImageWidth"
-            Value="0" />
-        <Setter
-            Property="VisualStateManager.VisualStateGroups">
+    <Style x:Key="HeaderGroupStyle" TargetType="telerik:NavigationViewItemView">
+        <Setter Property="Spacing" Value="{x:Static ui:Dimens.SpacingMinus35}" />
+        <Setter Property="ImageWidth" Value="0" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
-                <VisualStateGroup
-                    Name="CommonStates">
-                    <VisualState
-                        Name="Normal" />
-                    <VisualState
-                        Name="PointerOver">
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal" />
+                    <VisualState Name="PointerOver">
                         <VisualState.Setters>
-                            <Setter
-                                Property="BackgroundColor"
-                                Value="Transparent" />
-                            <Setter
-                                Property="TextColor"
-                                Value="Black" />
+                            <Setter Property="BackgroundColor" Value="Transparent" />
+                            <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState
-                        Name="Selected">
+                    <VisualState Name="Selected">
                         <VisualState.Setters>
-                            <Setter
-                                Property="BackgroundColor"
-                                Value="#80CBC4" />
-                            <Setter
-                                Property="TextColor"
-                                Value="Black" />
-                            <Setter
-                                Property="FontAttributes"
-                                Value="Bold" />
+                            <Setter Property="BackgroundColor" Value="#80CBC4" />
+                            <Setter Property="TextColor" Value="Black" />
+                            <Setter Property="FontAttributes" Value="Bold" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState
-                        Name="Disabled">
+                    <VisualState Name="Disabled">
                         <VisualState.Setters>
-                            <Setter
-                                Property="FontAttributes"
-                                Value="Bold" />
-                            <Setter
-                                Property="FontSize"
-                                Value="16" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-    </Style>
-    
-    <Style
-        TargetType="telerik:RadButton"
-        x:Key="HeaderBlackButton">
-        <Setter
-            Property="CornerRadius"
-            Value="9" />
-        <Setter
-            Property="BackgroundColor"
-            Value="Black" />
-        <Setter
-            Property="TextColor"
-            Value="White" />
-    </Style>
-
-    <Style
-        TargetType="telerik:RadTemplatedButton"
-        x:Key="TemplateButtonTransparent">
-        <Setter
-            Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup
-                    Name="CommonStates">
-                    <VisualState
-                        Name="Normal">
-                        <VisualState.Setters>
-                            <Setter
-                                Property="BorderBrush"
-                                Value="Transparent" />
-                            <Setter
-                                Property="BackgroundColor"
-                                Value="Transparent" />
-                            <Setter
-                                Property="BorderColor"
-                                Value="Transparent" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState
-                        Name="PointerOver">
-                        <VisualState.Setters>
-                            <Setter
-                                Property="Background"
-                                Value="#F2EFF9" />
-                            <Setter
-                                Property="BorderBrush"
-                                Value="Transparent" />
+                            <Setter Property="FontAttributes" Value="Bold" />
+                            <Setter Property="FontSize" Value="16" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -194,14 +79,42 @@
         </Setter>
     </Style>
 
-    <Style
-        TargetType="Label"
-        x:Key="Header5">
-        <Setter
-            Property="FontSize"
-            Value="{x:Static ui:Dimens.FontSize16}" />
-        <Setter
-            Property="FontAttributes"
-            Value="Bold" />
+    <Style x:Key="HeaderBlackButton" TargetType="telerik:RadButton">
+        <Setter Property="CornerRadius" Value="9" />
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
     </Style>
+
+    <Style x:Key="TemplateButtonTransparent" TargetType="telerik:RadTemplatedButton">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="BackgroundColor" Value="Transparent" />
+                            <Setter Property="BorderColor" Value="Transparent" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState Name="PointerOver">
+                        <VisualState.Setters>
+                            <Setter Property="Background" Value="#F2EFF9" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Header5" TargetType="Label">
+        <Setter Property="FontSize" Value="{x:Static ui:Dimens.FontSize16}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <ui:ChatDataTemplateSelector
+        x:Key="chatDataTemplateSelector"
+        MySelfChat="{StaticResource MySelfChat}"
+        TimeChat="{StaticResource TimeChat}"
+        YouChat="{StaticResource YouChat}" />
 </ResourceDictionary>
