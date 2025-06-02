@@ -36,6 +36,13 @@ public partial class HomeViewModel : BaseViewModel
 
     public AsyncRelayCommand NavigateCommand { get; set; }
 
+    [RelayCommand]
+    private async Task ChatOpenAsync()
+    {
+        await AppNavigator.NavigateAsync("Chat", true, null);
+    }
+
+
     public HomeViewModel(IAppNavigator appNavigator) : base(appNavigator)
     {
         NavigateCommand = new AsyncRelayCommand(NavigateToPageAsync);
@@ -54,7 +61,7 @@ public partial class HomeViewModel : BaseViewModel
                     case "Browse":
                         CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<Dashboard>(); break;
                     case "Radio":
-                        CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<ChatView>();; break;
+                        AppNavigator.NavigateAsync("//Chat", true, null).Wait(); break;
                     default:
                         CurrentPage = null; break;
                 }

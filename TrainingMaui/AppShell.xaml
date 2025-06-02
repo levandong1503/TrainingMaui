@@ -6,12 +6,17 @@
     xmlns:features="clr-namespace:TrainingMaui.Features.Music.Pages"
     xmlns:local="clr-namespace:TrainingMaui"
     Title="TrainingMaui"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Shell.NavBarIsVisible="False">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate features:Home}"
         Route="MainPage" />
+    
+    <ShellContent
+        Title="Chat"
+        ContentTemplate="{DataTemplate features:Chat}"
+        Route="Chat" />
 
 </Shell>

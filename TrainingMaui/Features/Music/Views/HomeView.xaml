@@ -93,40 +93,43 @@
                 Text="SubHeading"
                 Style="{StaticResource SubHeadingArea}" />
 
-            <FlexLayout
-                JustifyContent="SpaceBetween" Wrap="Wrap"
-                Grid.Row="2">
-                <views:CardPlaylistView
-                    ImageSource="playlistcoverimage.png"
-                    Title="Playlist 1"
-                    Description="Description of playlist">
-                </views:CardPlaylistView>
-                <views:CardPlaylistView
-                    ImageSource="playlistcoverimage.png"
-                    Title="Playlist 1"
-                    Description="Description of playlist">
-                </views:CardPlaylistView>
-                <views:CardPlaylistView
-                    ImageSource="playlistcoverimage.png"
-                    Title="Playlist 1"
-                    Description="Description of playlist">
-                </views:CardPlaylistView>
-                <views:CardPlaylistView
-                    ImageSource="playlistcoverimage.png"
-                    Title="Playlist 1"
-                    Description="Description of playlist">
-                </views:CardPlaylistView>
-                <views:CardPlaylistView
-                    ImageSource="playlistcoverimage.png"
-                    Title="Playlist 1"
-                    Description="Description of playlist">
-                </views:CardPlaylistView>
-                <views:CardPlaylistView
-                    ImageSource="playlistcoverimage.png"
-                    Title="Playlist 1"
-                    Description="Description of playlist">
-                </views:CardPlaylistView>
-            </FlexLayout>
+            <ScrollView
+                Grid.Row="2"
+                HorizontalScrollBarVisibility="Always"
+                VerticalScrollBarVisibility="Always">
+                <HorizontalStackLayout>
+                    <views:CardPlaylistView
+                        ImageSource="playlistcoverimage.png"
+                        Title="Playlist 1"
+                        Description="Description of playlist">
+                    </views:CardPlaylistView>
+                    <views:CardPlaylistView
+                        ImageSource="playlistcoverimage.png"
+                        Title="Playlist 1"
+                        Description="Description of playlist">
+                    </views:CardPlaylistView>
+                    <views:CardPlaylistView
+                        ImageSource="playlistcoverimage.png"
+                        Title="Playlist 1"
+                        Description="Description of playlist">
+                    </views:CardPlaylistView>
+                    <views:CardPlaylistView
+                        ImageSource="playlistcoverimage.png"
+                        Title="Playlist 1"
+                        Description="Description of playlist">
+                    </views:CardPlaylistView>
+                    <views:CardPlaylistView
+                        ImageSource="playlistcoverimage.png"
+                        Title="Playlist 1"
+                        Description="Description of playlist">
+                    </views:CardPlaylistView>
+                    <views:CardPlaylistView
+                        ImageSource="playlistcoverimage.png"
+                        Title="Playlist 1"
+                        Description="Description of playlist">
+                    </views:CardPlaylistView>
+                </HorizontalStackLayout>
+            </ScrollView>
         </VerticalStackLayout>
 
 

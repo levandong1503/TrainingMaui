@@ -10,6 +10,9 @@
         TargetType="telerik:NavigationViewHeader"
         x:Key="NavigationHeaderStyle">
         <Setter
+            Property="IsVisible"
+            Value="Visible" />
+        <Setter
             Property="FontSize"
             Value="{x:Static ui:Dimens.FontSize20}" />
         <Setter

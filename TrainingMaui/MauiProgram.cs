@@ -53,6 +53,7 @@ namespace TrainingMaui
         private static MauiAppBuilder RegisterPages(this MauiAppBuilder builder)
         {
             builder.Services.AddPage<Home, HomeViewModel>();
+            builder.Services.AddPage<Chat, ChatViewModel>();
             return builder;
         }
 

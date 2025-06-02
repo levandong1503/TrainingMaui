@@ -68,6 +68,15 @@
 	  <None Remove="Resources\Images\IconNavigation\radio.png" />
 	  <None Remove="Resources\Images\IconNavigation\search.png" />
 	  <None Remove="Resources\Images\IconNavigation\smile.png" />
+	  <None Remove="Resources\Images\Icon\image.png" />
+	  <None Remove="Resources\Images\Icon\imagedark.png" />
+	  <None Remove="Resources\Images\Icon\imagegray.png" />
+	  <None Remove="Resources\Images\Icon\mic.png" />
+	  <None Remove="Resources\Images\Icon\morehorizontal.png" />
+	  <None Remove="Resources\Images\Icon\phone.png" />
+	  <None Remove="Resources\Images\Icon\smile.png" />
+	  <None Remove="Resources\Images\Icon\smilegray.png" />
+	  <None Remove="Resources\Images\Icon\video.png" />
 	  <None Remove="Resources\Images\MusicPlayList\playlistcoverimage.png" />
 	</ItemGroup>
 
@@ -93,6 +102,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Features\Music\Pages\Home.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Pages\Chat.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Features\Music\Views\ArtistView.xaml">
@@ -129,12 +141,22 @@
 	  <MauiImage Include="Resources\Images\IconNavigation\radio.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\search.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\smile.png" />
+	  <MauiImage Include="Resources\Images\Icon\imagedark.png" />
+	  <MauiImage Include="Resources\Images\Icon\imagegray.png" />
+	  <MauiImage Include="Resources\Images\Icon\mic.png" />
+	  <MauiImage Include="Resources\Images\Icon\morehorizontal.png" />
+	  <MauiImage Include="Resources\Images\Icon\phone.png" />
+	  <MauiImage Include="Resources\Images\Icon\smilegray.png" />
+	  <MauiImage Include="Resources\Images\Icon\video.png" />
 	  <MauiImage Include="Resources\Images\MusicPlayList\playlistcoverimage.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Features\Music\Pages\Home.xaml.cs">
 	    <DependentUpon>Home.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Features\Music\Pages\Chat.xaml.cs">
+	    <DependentUpon>Chat.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Features\Music\Views\HomeView.xaml.cs">
 	    <DependentUpon>HomeView.xaml</DependentUpon>
