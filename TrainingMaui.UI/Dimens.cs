@@ -87,6 +87,7 @@ public class Dimens
     public static readonly double Height51 = 51;
     public static readonly double Height54 = 54;
 
+    public static readonly double Width24 = 24;
     public static readonly double Width40 = 40;
     public static readonly double Width48 = 48;
     public static readonly double Width51 = 51;

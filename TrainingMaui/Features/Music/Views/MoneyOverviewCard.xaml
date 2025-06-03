@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
-             x:Class="TrainingMaui.Features.Music.Views.MoneyOverviewCard"
-             xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
-             x:Name="this">
+<ContentView
+    x:Class="TrainingMaui.Features.Music.Views.MoneyOverviewCard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
+    x:Name="this">
     <telerik:RadBorder
-        BorderThickness="1"
+        Padding="15"
         BorderColor="#E0E0E0"
-        CornerRadius="8"
-        Padding="15">
-        <VerticalStackLayout
-            Spacing="{x:Static ui:Dimens.Spacing5}"
-            >
+        BorderThickness="1"
+        CornerRadius="8">
+        <FlexLayout
+            AlignItems="Start"
+            Direction="Column"
+            JustifyContent="Center">
             <Label
                 x:Name="TitleCard"
+                Margin="0,0,0,6"
                 Style="{StaticResource Header5}"
                 Text="{Binding Title, Source={x:Reference this}}" />
             <Label
                 x:Name="ContentCard"
-                FontSize="{x:Static ui:Dimens.FontSize40}"
+                Margin="0,0,0,6"
                 FontAttributes="Bold"
+                FontSize="{x:Static ui:Dimens.FontSize40}"
                 Text="{Binding ContentText, Source={x:Reference this}}" />
             <Label
                 x:Name="FooterCard"
                 FontSize="{x:Static ui:Dimens.FontSize16}"
                 Text="{Binding Footer, Source={x:Reference this}}" />
-        </VerticalStackLayout>
+        </FlexLayout>
     </telerik:RadBorder>
 </ContentView>

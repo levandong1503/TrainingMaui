@@ -1,177 +1,142 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView
+    x:Class="TrainingMaui.Features.Music.Views.HomeView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="TrainingMaui.Features.Music.Views.HomeView"
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
-    xmlns:views="clr-namespace:TrainingMaui.Features.Music.Views"
     xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
-    Margin="50, 0">
+    xmlns:views="clr-namespace:TrainingMaui.Features.Music.Views"
+    Margin="50,0">
 
 
     <ContentView.Resources>
 
-        <Style
-            TargetType="Label"
-            x:Key="HeadingArea">
-            <Setter
-                Property="FontSize"
-                Value="34" />
-            <Setter
-                Property="FontAttributes"
-                Value="Bold" />
-            <Setter
-                Property="VerticalOptions"
-                Value="Center" />
-        </Style>
+        <ControlTemplate x:Key="RadCollectionViewItem_ControlTemplate_WinUI">
+            <ContentPresenter />
+        </ControlTemplate>
 
-        <Style
-            TargetType="Label"
-            x:Key="SubHeadingArea">
-            <Setter
-                Property="FontSize"
-                Value="{x:Static ui:Dimens.FontSize16}" />
-            <Setter
-                Property="FontAttributes"
-                Value="None" />
-            <Setter
-                Property="VerticalOptions"
-                Value="Center" />
-            <Setter
-                Property="TextColor"
-                Value="#454545" />
-            <Setter
-                Property="Margin"
-                Value="0,10" />
+        <Style TargetType="telerik:RadCollectionViewItemView">
+            <Setter Property="ControlTemplate" Value="{StaticResource RadCollectionViewItem_ControlTemplate_WinUI}" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal" />
+                        <VisualState Name="MouseOver">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Selected">
+                            <VisualState.Setters />
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
         </Style>
     </ContentView.Resources>
 
     <VerticalStackLayout>
-        <FlexLayout
-            JustifyContent="SpaceBetween">
+        <FlexLayout JustifyContent="SpaceBetween">
 
 
             <telerik:RadBorder
-                CornerRadius="9"
+                Padding="5,0"
                 AutomationId="border"
+                BackgroundColor="#F7F7F7"
                 BorderThickness="1"
-                Padding="5, 0"
-                BackgroundColor="#F7F7F7">
-                <HorizontalStackLayout
-                    HorizontalOptions="Center"
-                    Spacing="5">
+                CornerRadius="9">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
                     <telerik:RadButton
-                        Margin="0, 4"
                         x:Name="button1"
-                        Text="Tab 1"
-                        Style="{StaticResource SeletedTabButton}" />
+                        Margin="0,4"
+                        Style="{StaticResource SeletedTabButton}"
+                        Text="Tab 1" />
                     <telerik:RadButton
                         x:Name="button2"
-                        Text="Tab 2"
-                        Style="{StaticResource UnSeletedTabButton}" />
+                        Style="{StaticResource UnSeletedTabButton}"
+                        Text="Tab 2" />
                     <telerik:RadButton
                         x:Name="button3"
-                        Text="Tab 3"
-                        Style="{StaticResource UnSeletedTabButton}" />
+                        Style="{StaticResource UnSeletedTabButton}"
+                        Text="Tab 3" />
                 </HorizontalStackLayout>
             </telerik:RadBorder>
 
 
             <telerik:RadButton
                 Grid.Column="2"
-                Text="Call to action"
-                Style="{StaticResource HeaderBlackButton}"/>
+                Style="{StaticResource HeaderBlackButton}"
+                Text="Call to action" />
         </FlexLayout>
 
         <VerticalStackLayout>
             <Label
                 Grid.Row="0"
-                Text="Title"
-                Style="{StaticResource HeadingArea}" />
+                Margin="0,32,0,8"
+                Style="{StaticResource HeadingArea}"
+                Text="Title" />
             <Label
                 Grid.Row="1"
-                Text="SubHeading"
-                Style="{StaticResource SubHeadingArea}" />
+                Margin="0,0,0,32"
+                Style="{StaticResource SubHeadingArea}"
+                Text="SubHeading" />
 
-            <ScrollView
-                Grid.Row="2"
-                HorizontalScrollBarVisibility="Always"
-                VerticalScrollBarVisibility="Always">
-                <HorizontalStackLayout>
-                    <views:CardPlaylistView
-                        ImageSource="playlistcoverimage.png"
-                        Title="Playlist 1"
-                        Description="Description of playlist">
-                    </views:CardPlaylistView>
-                    <views:CardPlaylistView
-                        ImageSource="playlistcoverimage.png"
-                        Title="Playlist 1"
-                        Description="Description of playlist">
-                    </views:CardPlaylistView>
-                    <views:CardPlaylistView
-                        ImageSource="playlistcoverimage.png"
-                        Title="Playlist 1"
-                        Description="Description of playlist">
-                    </views:CardPlaylistView>
-                    <views:CardPlaylistView
-                        ImageSource="playlistcoverimage.png"
-                        Title="Playlist 1"
-                        Description="Description of playlist">
-                    </views:CardPlaylistView>
-                    <views:CardPlaylistView
-                        ImageSource="playlistcoverimage.png"
-                        Title="Playlist 1"
-                        Description="Description of playlist">
-                    </views:CardPlaylistView>
-                    <views:CardPlaylistView
-                        ImageSource="playlistcoverimage.png"
-                        Title="Playlist 1"
-                        Description="Description of playlist">
-                    </views:CardPlaylistView>
-                </HorizontalStackLayout>
-            </ScrollView>
+            <telerik:RadCollectionView Grid.Row="2" ItemsSource="{Binding PlayLists}">
+                <telerik:RadCollectionView.ItemsLayout>
+                    <telerik:CollectionViewLinearLayout Orientation="Horizontal" />
+                </telerik:RadCollectionView.ItemsLayout>
+                <telerik:RadCollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <views:CardPlaylistView
+                            Title="{Binding Title}"
+                            Description="{Binding Description}"
+                            ImageSource="{Binding ImageSource}" />
+                    </DataTemplate>
+                </telerik:RadCollectionView.ItemTemplate>
+            </telerik:RadCollectionView>
         </VerticalStackLayout>
 
 
-        <VerticalStackLayout
-            Grid.Row="3">
+        <VerticalStackLayout Grid.Row="3">
             <Label
                 Grid.Row="0"
-                Text="Title"
-                Style="{StaticResource HeadingArea}" />
+                Margin="0,32,0,8"
+                Style="{StaticResource HeadingArea}"
+                Text="Title" />
             <Label
                 Grid.Row="1"
-                Text="SubHeading"
-                Style="{StaticResource SubHeadingArea}" />
+                Margin="0,0,0,32"
+                Style="{StaticResource SubHeadingArea}"
+                Text="SubHeading" />
 
             <FlexLayout
+                Grid.Row="2"
                 JustifyContent="SpaceBetween"
-                Wrap="Wrap"
-                Grid.Row="2">
+                Wrap="Wrap">
                 <views:ArtistView
-                    ImageSource="artistimage.png"
                     ArtistName="Artist Name"
-                    Category="R&amp;B" />
+                    Category="R&amp;B"
+                    ImageSource="artistimage.png" />
                 <views:ArtistView
-                    ImageSource="artistimage.png"
                     ArtistName="Artist Name"
-                    Category="R&amp;B" />
+                    Category="R&amp;B"
+                    ImageSource="artistimage.png" />
                 <views:ArtistView
-                    ImageSource="artistimage.png"
                     ArtistName="Artist Name"
-                    Category="R&amp;B" />
+                    Category="R&amp;B"
+                    ImageSource="artistimage.png" />
                 <views:ArtistView
-                    ImageSource="artistimage.png"
                     ArtistName="Artist Name"
-                    Category="R&amp;B" />
+                    Category="R&amp;B"
+                    ImageSource="artistimage.png" />
                 <views:ArtistView
-                    ImageSource="artistimage.png"
                     ArtistName="Artist Name"
-                    Category="R&amp;B" />
+                    Category="R&amp;B"
+                    ImageSource="artistimage.png" />
                 <views:ArtistView
-                    ImageSource="artistimage.png"
                     ArtistName="Artist Name"
-                    Category="R&amp;B" />
+                    Category="R&amp;B"
+                    ImageSource="artistimage.png" />
             </FlexLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>

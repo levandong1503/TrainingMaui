@@ -57,7 +57,7 @@ public partial class HomeViewModel : BaseViewModel
                 switch (navItem.Text)
                 {
                     case "Home":
-                        CurrentPage = new HomeView(); break;
+                        CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<HomeView>(); break;
                     case "Browse":
                         CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<Dashboard>(); break;
                     case "Radio":

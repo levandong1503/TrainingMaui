@@ -68,7 +68,9 @@
 	  <None Remove="Resources\Images\IconNavigation\radio.png" />
 	  <None Remove="Resources\Images\IconNavigation\search.png" />
 	  <None Remove="Resources\Images\IconNavigation\smile.png" />
+	  <None Remove="Resources\Images\Icon\calendar.png" />
 	  <None Remove="Resources\Images\Icon\filter.png" />
+	  <None Remove="Resources\Images\Icon\grid.png" />
 	  <None Remove="Resources\Images\Icon\image.png" />
 	  <None Remove="Resources\Images\Icon\imagedark.png" />
 	  <None Remove="Resources\Images\Icon\imagegray.png" />
@@ -148,7 +150,9 @@
 	  <MauiImage Include="Resources\Images\IconNavigation\radio.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\search.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\smile.png" />
+	  <MauiImage Include="Resources\Images\Icon\calendar.png" />
 	  <MauiImage Include="Resources\Images\Icon\filter.png" />
+	  <MauiImage Include="Resources\Images\Icon\grid.png" />
 	  <MauiImage Include="Resources\Images\Icon\imagedark.png" />
 	  <MauiImage Include="Resources\Images\Icon\imagegray.png" />
 	  <MauiImage Include="Resources\Images\Icon\mic.png" />

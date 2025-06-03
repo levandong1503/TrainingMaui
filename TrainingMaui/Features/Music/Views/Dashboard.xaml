@@ -256,11 +256,11 @@
                                             Grid.Column="1"
                                             Spacing="2"
                                             VerticalOptions="Center">
-                                            <Label Text="{Binding Name}" VerticalTextAlignment="End" />
                                             <Label
-                                                FontSize="Micro"
-                                                Text="{Binding Email}"
-                                                TextColor="Black" />
+                                                FontAttributes="Bold"
+                                                Text="{Binding Name}"
+                                                VerticalTextAlignment="End" />
+                                            <Label Text="{Binding Email}" TextColor="{x:Static ui:AppColors.Gray51}" />
                                         </VerticalStackLayout>
                                     </Grid>
                                 </DataTemplate>

@@ -7,31 +7,19 @@
     xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI">
 
     <Style TargetType="telerik:RadEntry">
-        <Setter
-            Property="VisualStateManager.VisualStateGroups">
+        <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
-                <VisualStateGroup
-                    Name="CommonStates">
-                    <VisualState
-                        Name="Normal">
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal">
                         <VisualState.Setters>
-                            <Setter
-                                Property="BackgroundColor"
-                                Value="#FFFFFF" />
-                            <Setter
-                                Property="BorderBrush"
-                                Value="{x:Static ui:AppColors.Gray88}" />
+                            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                            <Setter Property="BorderBrush" Value="{x:Static ui:AppColors.Gray88}" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState
-                        Name="Focused">
+                    <VisualState Name="Focused">
                         <VisualState.Setters>
-                            <Setter
-                                Property="BackgroundColor"
-                                Value="#FFFFFF" />
-                            <Setter
-                                Property="BorderBrush"
-                                Value="{x:Static ui:AppColors.Gray88}" />
+                            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                            <Setter Property="BorderBrush" Value="{x:Static ui:AppColors.Gray88}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -45,6 +33,15 @@
         <Setter Property="IsHeaderButtonVisible" Value="False" />
         <Setter Property="FontFamily" Value="Helvetica" />
         <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="{x:Static ui:AppColors.Gray51}" />
+        <Setter Property="BorderThickness" Value="0,0,1,0" />
+    </Style>
+
+    <Style x:Key="NavigationPaneStyle" TargetType="telerik:NavigationViewPane">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="{x:Static ui:AppColors.Gray51}" />
+        <Setter Property="BorderThickness" Value="0,0,1,0" />
     </Style>
 
     <Style x:Key="NavigationViewItemStyle" TargetType="telerik:NavigationViewItemView">
@@ -57,7 +54,11 @@
             <Setter.Value>
                 <VisualStateGroupList>
                     <VisualStateGroup Name="CommonStates">
-                        <VisualState Name="Normal" />
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BorderColor" Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
                         <VisualState Name="PointerOver">
                             <VisualState.Setters>
                                 <Setter Property="Background" Value="White" />
