@@ -6,6 +6,39 @@
     xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
     xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI">
 
+    <Style TargetType="telerik:RadEntry">
+        <Setter
+            Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup
+                    Name="CommonStates">
+                    <VisualState
+                        Name="Normal">
+                        <VisualState.Setters>
+                            <Setter
+                                Property="BackgroundColor"
+                                Value="#FFFFFF" />
+                            <Setter
+                                Property="BorderBrush"
+                                Value="{x:Static ui:AppColors.Gray88}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState
+                        Name="Focused">
+                        <VisualState.Setters>
+                            <Setter
+                                Property="BackgroundColor"
+                                Value="#FFFFFF" />
+                            <Setter
+                                Property="BorderBrush"
+                                Value="{x:Static ui:AppColors.Gray88}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
     <Style x:Key="NavigationHeaderStyle" TargetType="telerik:NavigationViewHeader">
         <Setter Property="IsVisible" Value="Visible" />
         <Setter Property="FontSize" Value="{x:Static ui:Dimens.FontSize20}" />

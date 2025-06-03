@@ -54,6 +54,7 @@ namespace TrainingMaui
         {
             builder.Services.AddPage<Home, HomeViewModel>();
             builder.Services.AddPage<Chat, ChatViewModel>();
+            builder.Services.AddPage<ListPage, ListPageViewModel>();
             return builder;
         }
 

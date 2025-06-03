@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<app:BasePage
+    xmlns:app="clr-namespace:TrainingMaui.CoreMVVM.MVVM;assembly=TrainingMaui.CoreMVVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrainingMaui.Features.Music.Pages.ListPage"
+    xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+    xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI"
+    Title="ListPage">
+
+    <app:BasePage.Resources>
+        <ControlTemplate
+            x:Key="RadCollectionViewItem_ControlTemplate_WinUI">
+            <ContentPresenter />
+        </ControlTemplate>
+
+        <Style
+            TargetType="telerik:RadCollectionViewItemView">
+            <Setter
+                Property="ControlTemplate"
+                Value="{StaticResource RadCollectionViewItem_ControlTemplate_WinUI}" />
+            <Setter
+                Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup
+                        Name="CommonStates">
+                        <VisualState
+                            Name="Normal" />
+                        <VisualState
+                            Name="MouseOver">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="{x:Static ui:AppColors.Gray88}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            Name="Selected">
+                            <VisualState.Setters>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <Style
+            TargetType="telerik:NavigationViewPane">
+            <Setter
+                Property="BackgroundColor"
+                Value="Transparent" />
+        </Style>
+    </app:BasePage.Resources>
+
+    <telerik:RadNavigationView
+        x:Name="navigationView"
+        HeaderText="Task App"
+        IsPaneOpen="True"
+        DisplayMode="Expanded"
+        AutoChangeDisplayMode="False"
+        ItemsSource="{Binding Menu}"
+        DisplayMemberPath="Text"
+        ImageSourcePath="Icon"
+        ImageSourceConverter="{StaticResource FontIconConverter}"
+        HeaderStyle="{StaticResource NavigationHeaderStyle}"
+        SelectedItem="{Binding SelectedItem}">
+
+        <telerik:RadNavigationView.Content>
+            <Grid RowDefinitions="Auto, *">
+                <Grid
+                    ColumnDefinitions="7*,5*,7*"
+                    Margin="64, 24">
+                    <Grid>
+                        <telerik:RadEntry
+                            x:Name="EntrySearchTicket"
+                            Padding="45,0,0,0"
+                            AutomationId="radEntry"
+                            FontSize="16"
+                            HeightRequest="40"
+                            Placeholder="Search tickets..."
+                            PlaceholderColor="#99000000" />
+                        <Image
+                            Margin="10, 0"
+                            Background="Transparent"
+                            HeightRequest="24"
+                            HorizontalOptions="Start"
+                            Source="{StaticResource Search}"
+                            VerticalOptions="Center"
+                            WidthRequest="24" />
+                    </Grid>
+
+                    <telerik:RadButton
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Margin="16,0"
+                        BorderColor="{x:Static ui:AppColors.Gray88}"
+                        TextColor="{x:Static ui:AppColors.Gray51}"
+                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                        ImageSource="filter.png"
+                        Text="Filter" />
+                </Grid>
+
+                <telerik:RadCollectionView
+                    Grid.Row="1"
+                    VerticalScrollBarVisibility="Always"
+                    HorizontalScrollBarVisibility="Always"
+                    Margin="80, 0"
+                    ItemsSource="{Binding SelectedItem.TaskModels, Source={x:Reference navigationView}}"
+                    IsEnabled="True">
+                    <telerik:RadCollectionView.HeaderTemplate>
+                        <DataTemplate>
+                            <telerik:RadBorder
+                                BorderColor="{x:Static ui:AppColors.Gray88}"
+                                BorderThickness="0,0,0,1">
+                                <Grid
+                                    Padding="0, 12"
+                                    ColumnDefinitions="2*, 12*, 3*, 3*, 2*, *, *">
+                                    <Label
+                                        TextColor="{x:Static ui:AppColors.Gray51}"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        Text="Task" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="Title"
+                                        FontAttributes="Bold"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="2"
+                                        Text="Project"
+                                        FontAttributes="Bold"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="3"
+                                        Text="Priority"
+                                        FontAttributes="Bold"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="4"
+                                        Text="Date"
+                                        FontAttributes="Bold"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="5"
+                                        Grid.ColumnSpan="2"
+                                        Text="Owner"
+                                        FontAttributes="Bold"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </telerik:RadBorder>
+                        </DataTemplate>
+                    </telerik:RadCollectionView.HeaderTemplate>
+                    <telerik:RadCollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <telerik:RadBorder
+                                BorderColor="{x:Static ui:AppColors.Gray88}"
+                                BorderThickness="0,0,0,1">
+                                <Grid
+                                    ColumnDefinitions="2*, 12*, 3*, 3*, 2*, *, *"
+                                    Padding="0, 12">
+                                    <Label
+                                        VerticalOptions="Center"
+                                        TextColor="{x:Static ui:AppColors.Gray51}"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        Text="{Binding TaskId}" />
+                                    <Label
+                                        Grid.Column="1"
+                                        VerticalOptions="Center"
+                                        FontAttributes="Bold"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        Text="{Binding Title}" />
+                                    <telerik:RadBorder
+                                        CornerRadius="8"
+                                        BorderColor="{x:Static ui:AppColors.Gray88}"
+                                        BorderThickness="1"
+                                        HorizontalOptions="Start"
+                                        Padding="8, 6"
+                                        Grid.Column="2">
+                                        <Label
+                                            Grid.Column="2"
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            FontSize="{x:Static ui:Dimens.FontSize12}"
+                                            Text="{Binding Project}" />
+                                    </telerik:RadBorder>
+                                    <telerik:RadBorder
+                                        CornerRadius="8"
+                                        BorderColor="{x:Static ui:AppColors.Gray88}"
+                                        BorderThickness="1"
+                                        HorizontalOptions="Start"
+                                        Padding="8, 6"
+                                        Grid.Column="3">
+                                        <Label
+                                            VerticalOptions="Center"
+                                            FontAttributes="Bold"
+                                            FontSize="{x:Static ui:Dimens.FontSize12}"
+                                            Text="{Binding Priority}" />
+                                    </telerik:RadBorder>
+                                    <Label
+                                        Grid.Column="4"
+                                        VerticalOptions="Center"
+                                        TextColor="{x:Static ui:AppColors.Gray51}"
+                                        FontSize="{x:Static ui:Dimens.FontSize16}"
+                                        Text="{Binding Date}" />
+                                    <telerik:RadBorder
+                                        Grid.Column="5"
+                                        HorizontalOptions="Start"
+                                        CornerRadius="28"
+                                        WidthRequest="28"
+                                        HeightRequest="28">
+                                        <Image
+                                            Source="{Binding ImageOwner}" />
+                                    </telerik:RadBorder>
+                                    <telerik:RadButton
+                                        BorderColor="Transparent"
+                                        Grid.Column="6"
+                                        Text="...">
+                                    </telerik:RadButton>
+                                </Grid>
+                            </telerik:RadBorder>
+                        </DataTemplate>
+                    </telerik:RadCollectionView.ItemTemplate>
+                </telerik:RadCollectionView>
+            </Grid>
+        </telerik:RadNavigationView.Content>
+    </telerik:RadNavigationView>
+</app:BasePage>

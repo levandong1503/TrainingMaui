@@ -7,20 +7,20 @@
     xmlns:ui="clr-namespace:TrainingMaui.UI;assembly=TrainingMaui.UI">
     <DataTemplate x:Key="MySelfChat">
         <telerik:RadBorder
-            BackgroundColor="{x:Static ui:AppColors.Gray88}"
+            BackgroundColor="Black"
             CornerRadius="16,16,4,16"
-            HorizontalOptions="Start">
+            HorizontalOptions="End">
             <Label
                 Padding="12"
                 Text="{Binding Message}"
-                TextColor="Black" />
+                TextColor="White" />
         </telerik:RadBorder>
     </DataTemplate>
 
     <DataTemplate x:Key="YouChat">
         <telerik:RadBorder
             BackgroundColor="{x:Static ui:AppColors.Gray88}"
-            CornerRadius="16,16,4,16"
+            CornerRadius="16,16,16,4"
             HorizontalOptions="Start">
             <Label
                 Padding="12"
@@ -30,6 +30,10 @@
     </DataTemplate>
 
     <DataTemplate x:Key="TimeChat">
-        <Label HorizontalOptions="Start" Text="{Binding Message}" />
+        <Label 
+            HorizontalOptions="Center"
+            Text="{Binding Message}"
+            FontSize="{x:Static ui:Dimens.FontSize16}"
+            TextColor="{x:Static ui:AppColors.Gray51}"/>
     </DataTemplate>
 </ResourceDictionary>

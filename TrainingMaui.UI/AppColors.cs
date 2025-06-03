@@ -17,6 +17,7 @@ public static class AppColors
     public static readonly Color Grey30 = Color.FromArgb("#FFC7C7D7");
     public static readonly Color Grey40 = Color.FromArgb("#FF9393AB");
     public static readonly Color Grey50 = Color.FromArgb("#FF555670");
+    public static readonly Color Gray51 = Color.FromArgb("#828282");
     public static readonly Color Grey60 = Color.FromArgb("#FF595959");
     public static readonly Color Gray88 = Color.FromArgb("#E0E0E0");
     public static readonly Color Black = Color.FromArgb("#FF262626");

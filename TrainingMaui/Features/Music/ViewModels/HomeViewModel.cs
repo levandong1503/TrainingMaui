@@ -62,6 +62,8 @@ public partial class HomeViewModel : BaseViewModel
                         CurrentPage = App.Current?.Handler?.MauiContext?.Services.GetService<Dashboard>(); break;
                     case "Radio":
                         AppNavigator.NavigateAsync("//Chat", true, null).Wait(); break;
+                    case "Playlists":
+                        AppNavigator.NavigateAsync("//ListPage", true, null).Wait(); break;
                     default:
                         CurrentPage = null; break;
                 }

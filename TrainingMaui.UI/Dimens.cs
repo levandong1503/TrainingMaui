@@ -16,6 +16,7 @@ public class Dimens
     public static readonly double SpacingSm = 8;
     public static readonly double Spacing10 = 10;
 
+    public static readonly double FontSize12 = 12;
     public static readonly double FontSize16 = 16;
     public static readonly double FontSize20 = 20;
     public static readonly double FontSize40 = 40;

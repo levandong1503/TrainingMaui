@@ -68,6 +68,7 @@
 	  <None Remove="Resources\Images\IconNavigation\radio.png" />
 	  <None Remove="Resources\Images\IconNavigation\search.png" />
 	  <None Remove="Resources\Images\IconNavigation\smile.png" />
+	  <None Remove="Resources\Images\Icon\filter.png" />
 	  <None Remove="Resources\Images\Icon\image.png" />
 	  <None Remove="Resources\Images\Icon\imagedark.png" />
 	  <None Remove="Resources\Images\Icon\imagegray.png" />
@@ -107,6 +108,9 @@
 	  <MauiXaml Update="Features\Music\Pages\Chat.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Pages\ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Features\Music\Views\ArtistView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -144,6 +148,7 @@
 	  <MauiImage Include="Resources\Images\IconNavigation\radio.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\search.png" />
 	  <MauiImage Include="Resources\Images\IconNavigation\smile.png" />
+	  <MauiImage Include="Resources\Images\Icon\filter.png" />
 	  <MauiImage Include="Resources\Images\Icon\imagedark.png" />
 	  <MauiImage Include="Resources\Images\Icon\imagegray.png" />
 	  <MauiImage Include="Resources\Images\Icon\mic.png" />
@@ -170,6 +175,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="Features\Music\Pages\ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
 	  <None Update="Features\Music\Views\CardPlaylistView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>

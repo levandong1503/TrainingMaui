@@ -18,5 +18,10 @@
         Title="Chat"
         ContentTemplate="{DataTemplate features:Chat}"
         Route="Chat" />
+    <ShellContent
+        Title="ListPage"
+        ContentTemplate="{DataTemplate features:ListPage}"
+        Route="ListPage" />
+
 
 </Shell>

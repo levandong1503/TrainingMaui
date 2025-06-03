@@ -19,7 +19,7 @@
             IsPaneOpen="True"
             DisplayMode="Expanded"
             AutoChangeDisplayMode="False"
-            SelectedItem="{Binding SelectedItem}"
+            SelectedItem="{Binding SelectedItem}"   
             
             BackgroundColor="Transparent">
             <telerik:RadNavigationView.Items>

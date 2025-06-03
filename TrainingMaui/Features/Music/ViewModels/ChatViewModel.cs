@@ -18,38 +18,38 @@ public class ChatViewModel : BaseViewModel
             new()
             {
                 Name = "Helena",
-                NewestChat = "Will head to the Help Center...",
+                NewestChat = "When are you coming back to town? Would love to catch up.",
+                Avatar = "helenahills.png"
+            },
+            new()
+            {
+                Name = "Carlo Emilio",
+                NewestChat = "Let’s go",
                 Avatar = "helenahills.png"
             },
             new()
             {
                 Name = "Helena",
-                NewestChat = "Will head to the Help Center...",
-                Avatar = "helena.png"
+                NewestChat = "Trueeeeee",
+                Avatar = "helenahills.png"
             },
             new()
             {
                 Name = "Helena",
-                NewestChat = "Will head to the Help Center...",
-                Avatar = "helena.png"
+                NewestChat = "lol yeah, are you coming to the lunch on the 13th?",
+                Avatar = "helenahills.png"
             },
             new()
             {
                 Name = "Helena",
-                NewestChat = "Will head to the Help Center...",
-                Avatar = "helena.png"
+                NewestChat = "Jack needs to find a sitter for the dog and I don’t know who’s good",
+                Avatar = "helenahills.png"
             },
             new()
             {
                 Name = "Helena",
-                NewestChat = "Will head to the Help Center...",
-                Avatar = "helena.png"
-            },
-            new()
-            {
-                Name = "Helena",
-                NewestChat = "Will head to the Help Center...",
-                Avatar = "helena.png"
+                NewestChat = "great catching up over dinner!!",
+                Avatar = "helenahills.png"
             },
         ];
 
