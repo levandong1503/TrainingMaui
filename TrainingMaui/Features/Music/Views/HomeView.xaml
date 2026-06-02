@@ -62,10 +62,12 @@
                 </HorizontalStackLayout>
             </telerik:RadBorder>
 
-
+            
             <telerik:RadButton
                 Grid.Column="2"
                 Style="{StaticResource HeaderBlackButton}"
+                x:Name="MyButton"
+                Clicked="RadButton_Clicked"
                 Text="Call to action" />
         </FlexLayout>
 
