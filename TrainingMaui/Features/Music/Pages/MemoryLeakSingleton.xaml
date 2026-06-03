@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingMaui.Features.Music.Pages.MemoryLeakSingleton"
+             Title="MemoryLeakSingleton">
+    <VerticalStackLayout Padding="20" Spacing="12">
+        <Label Text="Singleton -> Event handler leak demo" FontAttributes="Bold" />
+        <Label x:Name="StatusLabel" Text="Status: ready" />
+        <HorizontalStackLayout Spacing="8">
+            <Button Text="Create subscriber (strong ref)" Clicked="CreateSubscriber_Clicked" />
+            <Button Text="Release strong ref" Clicked="ReleaseStrongRef_Clicked" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="8">
+            <Button Text="Force GC And Check" Clicked="ForceGc_Clicked" />
+            <Button Text="Unsubscribe (fix #1)" Clicked="Unsubscribe_Clicked" />
+        </HorizontalStackLayout>
+
+        <Button Text="Create subscriber (weak subscribe) (fix #2)" Clicked="CreateWeakSubscriber_Clicked" />
+
+        <Label x:Name="DetailsLabel" Text="Details:" />
+    </VerticalStackLayout>
+</ContentPage>

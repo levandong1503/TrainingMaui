@@ -7,8 +7,10 @@ using TrainingMaui.CoreMVVM.MVVM;
 using TrainingMaui.CoreMVVM.Navigation;
 using TrainingMaui.DataAccess.Models;
 using TrainingMaui.Features.Music.Pages;
+using TrainingMaui.Features.Music.Services;
 using TrainingMaui.Features.Music.ViewModels;
 using TrainingMaui.Features.Music.Views;
+using TrainingMaui.Services;
 using TrainingMaui.Utils.Encrypted;
 
 namespace TrainingMaui
@@ -47,6 +49,8 @@ namespace TrainingMaui
         private static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
         {
             builder.Services.AddTransient<IAppNavigator, AppNavigator>();
+            builder.Services.AddSingleton<ILoadHomeService, LoadHomeService>();
+            builder.Services.AddSingleton< GlobalEventService >();
             return builder;
         }
 
@@ -55,6 +59,8 @@ namespace TrainingMaui
             builder.Services.AddPage<Home, HomeViewModel>();
             builder.Services.AddPage<Chat, ChatViewModel>();
             builder.Services.AddPage<ListPage, ListPageViewModel>();
+            builder.Services.AddPage<MemoryLeakEvent, MemoryLeakEventViewModel>();
+            builder.Services.AddTransient<MemoryLeakSingleton>();
             return builder;
         }
 

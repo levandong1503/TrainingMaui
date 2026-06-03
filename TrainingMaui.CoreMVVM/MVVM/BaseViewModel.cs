@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace TrainingMaui.CoreMVVM.MVVM;
 
-public abstract partial class BaseViewModel : INotifyPropertyChanged
+public abstract partial class BaseViewModel : ObservableRecipient, INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
     protected bool isBusy;

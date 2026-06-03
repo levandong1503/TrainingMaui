@@ -113,7 +113,8 @@
 
             <FlexLayout
                 Grid.Row="2"
-                JustifyContent="SpaceBetween"
+                
+                JustifyContent="Start"
                 Wrap="Wrap">
                 <views:ArtistView
                     ArtistName="Artist Name"

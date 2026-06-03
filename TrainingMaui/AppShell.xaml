@@ -22,6 +22,23 @@
         Title="ListPage"
         ContentTemplate="{DataTemplate features:ListPage}"
         Route="ListPage" />
+    <ShellContent
+    Title="Race Condition Page"
+    ContentTemplate="{DataTemplate features:RaceConditionPage}"
+    Route="RaceConditionPage" />
 
+    <ShellContent
+Title="Memory leak event"
+ContentTemplate="{DataTemplate features:MemoryLeakEvent}"
+Route="MemoryLeakEvent" />
 
+    <ShellContent
+Title="Memory leak timer"
+ContentTemplate="{DataTemplate features:MemoryLeakTimer}"
+Route="MemoryLeakTimer" />
+
+    <ShellContent
+Title="Memory Leak Singleton"
+ContentTemplate="{DataTemplate features:MemoryLeakSingleton}"
+Route="MemoryLeakSingleton" />
 </Shell>

@@ -1,47 +1,30 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 using TrainingMaui.CoreMVVM.MVVM;
 using TrainingMaui.CoreMVVM.Navigation;
 using TrainingMaui.Features.Music.Models;
+using TrainingMaui.Features.Music.Services;
 
 namespace TrainingMaui.Features.Music.ViewModels;
 
-public class HomeContentViewModel : BaseViewModel
+public partial class HomeContentViewModel : BaseViewModel
 {
-    public ObservableCollection<PlayList> PlayLists { get; set; }
-    public HomeContentViewModel(IAppNavigator appNavigator) : base(appNavigator)
+    [ObservableProperty] ObservableCollection<PlayList> playLists = [];
+    private readonly ILoadHomeService _loadHomeService;
+    public HomeContentViewModel(IAppNavigator appNavigator, ILoadHomeService loadHomeService) 
+        : base(appNavigator)
     {
-        PlayLists = new ObservableCollection<PlayList>
+        _loadHomeService = loadHomeService;
+
+        _loadHomeService.LoadPlayListAsync()
+            .ContinueWith(async x =>
         {
-            new PlayList
+            PlayLists.Clear();
+            foreach (var item in await x)
             {
-                Title = "Playlist 1",
-                Description = "Description of playlist",
-                ImageSource = "playlistcoverimage.png"
-            },
-            new PlayList
-            {
-                Title = "Top Hits",
-                Description = "The most popular songs right now.",
-                ImageSource = "playlistcoverimage.png"
-            },
-            new PlayList
-            {
-                Title = "Chill Vibes",
-                Description = "Relaxing music for your downtime.",
-                ImageSource = "playlistcoverimage.png"
-            },
-            new PlayList
-            {
-                Title = "Workout Mix",
-                Description = "High-energy tracks to keep you motivated.",
-                ImageSource = "playlistcoverimage.png"
-            },
-            new PlayList
-            {
-                Title = "Playlist 2",
-                Description = "Description of playlist",
-                ImageSource = "playlistcoverimage.png"
+                PlayLists.Add(item);
             }
-        };
+        })
+            .ConfigureAwait(false);
     }
 }

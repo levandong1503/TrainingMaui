@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<app:BasePage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+              xmlns:app="clr-namespace:TrainingMaui.CoreMVVM.MVVM;assembly=TrainingMaui.CoreMVVM"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingMaui.Features.Music.Pages.RaceConditionPage"
+             Title="Race Condition Demo">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+            <Label Text="Race Condition demo — nhiều Task cùng tăng counter" FontAttributes="Bold" />
+
+            <Label x:Name="ExpectedLabel" Text="Expected:" />
+            <Label x:Name="ActualLabel" Text="Actual:" />
+
+            <HorizontalStackLayout Spacing="8">
+                <Button x:Name="BtnUnsafe" Text="Run Unsafe" Clicked="RunUnsafe_Clicked" />
+                <Button x:Name="BtnLock" Text="Run lock" Clicked="RunLock_Clicked" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="8">
+                <Button x:Name="BtnInterlocked" Text="Run Interlocked" Clicked="RunInterlocked_Clicked" />
+                <Button x:Name="BtnSemaphore" Text="Run SemaphoreSlim" Clicked="RunSemaphore_Clicked" />
+            </HorizontalStackLayout>
+
+            <Label x:Name="InfoLabel" Text="Info:" />
+        </VerticalStackLayout>
+    </ScrollView>
+</app:BasePage>

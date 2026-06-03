@@ -113,6 +113,18 @@
 	  <MauiXaml Update="Features\Music\Pages\ListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Pages\MemoryLeakEvent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Pages\MemoryLeakSingleton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Pages\MemoryLeakTimer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\Music\Pages\RaceConditionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Features\Music\Views\ArtistView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -169,6 +181,9 @@
 	  </Compile>
 	  <Compile Update="Features\Music\Pages\Chat.xaml.cs">
 	    <DependentUpon>Chat.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Features\Music\Pages\RaceConditionPage.xaml.cs">
+	    <DependentUpon>RaceConditionPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Features\Music\Views\HomeView.xaml.cs">
 	    <DependentUpon>HomeView.xaml</DependentUpon>

@@ -10,7 +10,7 @@ namespace TrainingMaui.Features.Music.Models
 
         [ObservableProperty]
         private string _description = null!;
-        
+
         [ObservableProperty]
         private ImageSource _imageSource = null!;
     }
